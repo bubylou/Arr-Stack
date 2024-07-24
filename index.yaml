@@ -44,6 +44,22 @@ entries:
     urls:
     - https://github.com/bubylou/helm-charts/releases/download/radarr-0.1.0/radarr-0.1.0.tgz
     version: 0.1.0
+  readarr:
+  - apiVersion: v2
+    appVersion: testing-0.3.32.2587
+    created: "2024-07-24T03:19:27.518097641Z"
+    dependencies:
+    - name: common
+      repository: file://../common
+      version: 0.1.0
+    description: Book Manager and Automation (Sonarr for Ebooks)
+    digest: 8d9f41bc1506381a6e4f7b8bd82e4020bed267a150da6c7ec44056e5ee6c7239
+    icon: https://readarr.com/img/logo.png
+    name: readarr
+    type: application
+    urls:
+    - https://github.com/bubylou/helm-charts/releases/download/readarr-0.1.0/readarr-0.1.0.tgz
+    version: 0.1.0
   sonarr:
   - apiVersion: v2
     appVersion: release-4.0.8.1874
@@ -60,4 +76,4 @@ entries:
     urls:
     - https://github.com/bubylou/helm-charts/releases/download/sonarr-0.1.0/sonarr-0.1.0.tgz
     version: 0.1.0
-generated: "2024-07-24T01:59:19.853071546Z"
+generated: "2024-07-24T03:19:27.518126025Z"
