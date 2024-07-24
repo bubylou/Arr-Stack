@@ -1,0 +1,23 @@
+{{- define "common.test.connection" -}}
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "app.fullname" . }}-test-connection"
+  labels:
+    {{- include "app.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: curl
+      image: busybox
+      env:
+        - name: {{ upper .Chart.Name }}__AUTH__APIKEY
+          valueFrom:
+            secretKeyRef:
+              name: {{ include "app.fullname" . }}
+              key: api-key
+      command: ['curl']
+      args: ['http://{{ include "app.fullname" . }}:{{ .Values.service.port }}/api/v3/health?ApiKey=${{ upper .Chart.Name }}__AUTH__APIKEY']
+  restartPolicy: Never
+{{- end -}}
