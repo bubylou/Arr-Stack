@@ -1,0 +1,24 @@
+{
+	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
+	"extends": [
+		"config:recommended"
+	],
+	"helmv3": {
+		"registryAliases": {
+			"stable": "https://charts.helm.sh/stable"
+		},
+		"commitMessageTopic": "helm chart {{depName}}",
+		"fileMatch": [
+			"charts/.+/Chart\\.ya?ml$"
+		]
+	},
+	"packageRules": [
+		{
+			"matchPackagePatterns": [
+				"ghcr.io/hotio/*"
+			],
+			"groupName": "hotio",
+			"versioning": "regex:^release-(?<major>\\d+).(?<minor>\\d+).(?<patch>\\d+)\\.(?<revision>\\d+)$"
+		}
+	]
+}
