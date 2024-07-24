@@ -1,0 +1,63 @@
+apiVersion: v1
+entries:
+  common:
+  - apiVersion: v2
+    appVersion: release-4.0.8.1874
+    created: "2024-07-24T01:59:19.520932756Z"
+    description: A common library for arr apps
+    digest: a5b98bdc62f5a6d5363426ab2216aa6f572378e7c0e98c31af0d12a79019dad8
+    icon: https://sonarr.tv/img/logo.png
+    name: common
+    type: library
+    urls:
+    - https://github.com/bubylou/helm-charts/releases/download/common-0.1.0/common-0.1.0.tgz
+    version: 0.1.0
+  lidarr:
+  - apiVersion: v2
+    appVersion: release-2.4.3.4248
+    created: "2024-07-24T01:59:19.65046792Z"
+    dependencies:
+    - name: common
+      repository: file://../common
+      version: 0.1.0
+    description: Looks and smells like Sonarr but made for music
+    digest: ad0a64c5a0c8dcc52e9e0d61e5b074c54c8e7cc4a68ae0c9e172afa095d19578
+    icon: https://lidarr.audio/img/logo.png
+    name: lidarr
+    type: application
+    urls:
+    - https://github.com/bubylou/helm-charts/releases/download/lidarr-0.1.0/lidarr-0.1.0.tgz
+    version: 0.1.0
+  radarr:
+  - apiVersion: v2
+    appVersion: release-5.8.3.8933
+    created: "2024-07-24T01:59:19.752660376Z"
+    dependencies:
+    - name: common
+      repository: file://../common
+      version: 0.1.0
+    description: Movie organizer/manager for usenet and torrent users
+    digest: 558b0932afbd958ab56763ffa9a612bab0ee27e4fbb4a4d04d202e74ee3fbc41
+    icon: https://radarr.video/img/logo.png
+    name: radarr
+    type: application
+    urls:
+    - https://github.com/bubylou/helm-charts/releases/download/radarr-0.1.0/radarr-0.1.0.tgz
+    version: 0.1.0
+  sonarr:
+  - apiVersion: v2
+    appVersion: release-4.0.8.1874
+    created: "2024-07-24T01:59:19.853066196Z"
+    dependencies:
+    - name: common
+      repository: file://../common
+      version: 0.1.0
+    description: Smart PVR for newsgroup and bittorrent users
+    digest: 42a2841219623fa6fdce523b9b4f74b7d0cf618388a484baa51c68ddf704e72d
+    icon: https://sonarr.tv/img/logo.png
+    name: sonarr
+    type: application
+    urls:
+    - https://github.com/bubylou/helm-charts/releases/download/sonarr-0.1.0/sonarr-0.1.0.tgz
+    version: 0.1.0
+generated: "2024-07-24T01:59:19.853071546Z"
