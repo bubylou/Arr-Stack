@@ -15,6 +15,21 @@ entries:
   lidarr:
   - apiVersion: v2
     appVersion: release-2.4.3.4248
+    created: "2024-07-26T02:42:29.586877404Z"
+    dependencies:
+    - name: common
+      repository: file://../common
+      version: 0.1.0
+    description: Looks and smells like Sonarr but made for music
+    digest: 69fa97a0d3c11c79fc39ce827103898fa003407d3e00bda280c499588396d58b
+    icon: https://lidarr.audio/img/logo.png
+    name: lidarr
+    type: application
+    urls:
+    - https://github.com/bubylou/helm-charts/releases/download/lidarr-0.1.1/lidarr-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: release-2.4.3.4248
     created: "2024-07-24T01:59:19.65046792Z"
     dependencies:
     - name: common
@@ -29,6 +44,21 @@ entries:
     - https://github.com/bubylou/helm-charts/releases/download/lidarr-0.1.0/lidarr-0.1.0.tgz
     version: 0.1.0
   radarr:
+  - apiVersion: v2
+    appVersion: release-5.8.3.8933
+    created: "2024-07-26T02:42:29.711453469Z"
+    dependencies:
+    - name: common
+      repository: file://../common
+      version: 0.1.0
+    description: Movie organizer/manager for usenet and torrent users
+    digest: 1889db9cedd8042d1ed25d862d9f0e75ce67d9524c9065c07e6ee03745ee6ca3
+    icon: https://radarr.video/img/logo.png
+    name: radarr
+    type: application
+    urls:
+    - https://github.com/bubylou/helm-charts/releases/download/radarr-0.1.1/radarr-0.1.1.tgz
+    version: 0.1.1
   - apiVersion: v2
     appVersion: release-5.8.3.8933
     created: "2024-07-24T01:59:19.752660376Z"
@@ -47,6 +77,21 @@ entries:
   readarr:
   - apiVersion: v2
     appVersion: testing-0.3.32.2587
+    created: "2024-07-26T02:42:29.843555428Z"
+    dependencies:
+    - name: common
+      repository: file://../common
+      version: 0.1.0
+    description: Book Manager and Automation (Sonarr for Ebooks)
+    digest: 5dcaacd217c2cbe529cc34f6ba24cc1490efea1a4492d656b05e253a8002e4e2
+    icon: https://readarr.com/img/logo.png
+    name: readarr
+    type: application
+    urls:
+    - https://github.com/bubylou/helm-charts/releases/download/readarr-0.1.1/readarr-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: testing-0.3.32.2587
     created: "2024-07-24T03:19:27.518097641Z"
     dependencies:
     - name: common
@@ -61,6 +106,21 @@ entries:
     - https://github.com/bubylou/helm-charts/releases/download/readarr-0.1.0/readarr-0.1.0.tgz
     version: 0.1.0
   sonarr:
+  - apiVersion: v2
+    appVersion: release-4.0.8.1874
+    created: "2024-07-26T02:42:29.986384839Z"
+    dependencies:
+    - name: common
+      repository: file://../common
+      version: 0.1.0
+    description: Smart PVR for newsgroup and bittorrent users
+    digest: 69ab701b9b9425a21ac112c9d631a7c70e28c2ac8f9db50eb7ee946e359ddc77
+    icon: https://sonarr.tv/img/logo.png
+    name: sonarr
+    type: application
+    urls:
+    - https://github.com/bubylou/helm-charts/releases/download/sonarr-0.1.1/sonarr-0.1.1.tgz
+    version: 0.1.1
   - apiVersion: v2
     appVersion: release-4.0.8.1874
     created: "2024-07-24T01:59:19.853066196Z"
@@ -79,6 +139,21 @@ entries:
   unpackerr:
   - apiVersion: v2
     appVersion: release-0.14.0
+    created: "2024-07-26T02:42:30.088229657Z"
+    dependencies:
+    - name: common
+      repository: file://../common
+      version: 0.1.0
+    description: Extracts downloads for other arr apps
+    digest: bc7b1954606c82c80a31f74107bc9e52e5ca7d9c7828364b91b6dfae42f6061c
+    icon: https://unpackerr.zip/img/icon.png
+    name: unpackerr
+    type: application
+    urls:
+    - https://github.com/bubylou/helm-charts/releases/download/unpackerr-0.1.2/unpackerr-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: release-0.14.0
     created: "2024-07-26T02:18:48.943033237Z"
     dependencies:
     - name: common
@@ -92,4 +167,4 @@ entries:
     urls:
     - https://github.com/bubylou/helm-charts/releases/download/unpackerr-0.1.0/unpackerr-0.1.0.tgz
     version: 0.1.0
-generated: "2024-07-26T02:18:48.943047714Z"
+generated: "2024-07-26T02:42:30.088267718Z"
