@@ -41,6 +41,7 @@ spec:
                 secretKeyRef:
                   name: lidarr 
                   key: api-key
+                  optional: true
             - name: UN_RADARR_0_URL
               value: "http://radarr.{{ .Release.Namespace }}.svc:7878"
             - name: UN_RADARR_0_API_KEY
@@ -48,6 +49,7 @@ spec:
                 secretKeyRef:
                   name: radarr
                   key: api-key
+                  optional: true
             - name: UN_READARR_0_URL
               value: "http://readarr.{{ .Release.Namespace }}.svc:8787"
             - name: UN_READARR_0_API_KEY
@@ -55,6 +57,7 @@ spec:
                 secretKeyRef:
                   name: readarr
                   key: api-key
+                  optional: true
             - name: UN_SONARR_0_URL
               value: "http://sonarr.{{ .Release.Namespace }}.svc:8989"
             - name: UN_SONARR_0_API_KEY
@@ -62,6 +65,7 @@ spec:
                 secretKeyRef:
                   name: sonarr
                   key: api-key
+                  optional: true
           {{- with $env := .Values.env }}{{ toYaml $env | nindent 8 }}{{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
