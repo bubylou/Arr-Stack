@@ -76,4 +76,20 @@ entries:
     urls:
     - https://github.com/bubylou/helm-charts/releases/download/sonarr-0.1.0/sonarr-0.1.0.tgz
     version: 0.1.0
-generated: "2024-07-24T03:19:27.518126025Z"
+  unpackerr:
+  - apiVersion: v2
+    appVersion: release-0.14.0
+    created: "2024-07-26T02:18:48.943033237Z"
+    dependencies:
+    - name: common
+      repository: file://../common
+      version: 0.1.0
+    description: Extracts downloads for other arr apps
+    digest: 295d98caecd24070d3d0245e802c77e637537a3f54876373c7c34b9b0d3e0307
+    icon: https://unpackerr.zip/img/icon.png
+    name: unpackerr
+    type: application
+    urls:
+    - https://github.com/bubylou/helm-charts/releases/download/unpackerr-0.1.0/unpackerr-0.1.0.tgz
+    version: 0.1.0
+generated: "2024-07-26T02:18:48.943047714Z"
