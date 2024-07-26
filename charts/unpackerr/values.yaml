@@ -8,7 +8,7 @@ image:
   repository: ghcr.io/hotio/unpackerr
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "release-0.14.0"
 
 imagePullSecrets: []
 nameOverride: ""
