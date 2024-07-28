@@ -6,18 +6,18 @@ metadata:
   labels:
     {{- include "app.labels" . | nindent 4 }}
   annotations:
-    "helm.sh/hook": test
+    "helm.sh/hook": test-success
 spec:
   containers:
-    - name: curl
-      image: busybox
+    - name: test
+      image: alpine/httpie
       env:
-        - name: {{ upper .Chart.Name }}__AUTH__APIKEY
+        - name: API_KEY
           valueFrom:
             secretKeyRef:
               name: {{ include "app.fullname" . }}
               key: api-key
-      command: ['curl']
-      args: ['http://{{ include "app.fullname" . }}:{{ .Values.service.port }}/api/v3/health?ApiKey=${{ upper .Chart.Name }}__AUTH__APIKEY']
+      command: ['http']
+      args: ['{{ include "app.fullname" . }}:{{ .Values.service.port }}/api/v3/health', 'X-Api-Key:$API_KEY']
   restartPolicy: Never
 {{- end -}}
