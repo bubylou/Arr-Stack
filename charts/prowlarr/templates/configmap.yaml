@@ -1,0 +1,40 @@
+# https://kubernetes.io/docs/concepts/configuration/configmap/
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: prowlarr-bootstrap
+  labels:
+    {{- include "app.labels" . | nindent 4 }}
+data:
+  bootstrap.sh: |-
+    #!/usr/bin/env sh
+
+    add_app() {
+            http --ignore-stdin POST "{{ include "app.fullname" . }}:{{ .Values.service.port }}/api/v1/applications" \
+                    X-Api-Key:$PROWLARR_API_KEY \
+                    name=$app \
+                    syncLevel=fullSync \
+                    fields[0][name]=prowlarrUrl \
+                    fields[0][value]=http://{{ include "app.fullname" . }}:{{ .Values.service.port }} \
+                    fields[1][name]=baseUrl \
+                    fields[1][value]=http://$app:$2 \
+                    fields[2][name]=apiKey \
+                    fields[2][value]=$1 \
+                    implementationName=$app \
+                    implementation=$app \
+                    configContract=${app}Settings
+    }
+
+    sleep 30
+    for app in lidarr radarr readarr sonarr; do
+            if [[ "$app" = "lidarr" && -n "$LIDARR_API_KEY" ]]; then
+                    add_app $LIDARR_API_KEY 8686
+            elif [[ "$app" = "radarr" && -n "$RADARR_API_KEY" ]]; then
+                    add_app $RADARR_API_KEY 7878
+            elif [[ "$app" = "readarr" && -n "$READARR_API_KEY" ]]; then
+                    add_app $READARR_API_KEY 8787
+            elif [[ "$app" = "sonarr" && -n "$SONARR_API_KEY" ]]; then
+                    add_app $SONARR_API_KEY 8989
+            fi
+    done
