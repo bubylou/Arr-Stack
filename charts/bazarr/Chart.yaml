@@ -7,7 +7,7 @@ appVersion: "release-1.4.3"
 icon: "https://www.bazarr.media/assets/img/logo.png"
 dependencies:
 - name: common
-  version: 0.1.1
+  version: 0.1.2
   repository: file://../common
 maintainers:
   - name: bubylou
