@@ -5,3 +5,6 @@ type: library
 version: 0.1.1
 appVersion: "release-4.0.8.1874"
 icon: "https://sonarr.tv/img/logo.png"
+maintainers:
+  - name: bubylou
+    email: bubylou@pm.me
