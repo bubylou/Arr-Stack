@@ -1,0 +1,10 @@
+apiVersion: v2
+name: postgres
+description: Separate database for arr apps
+type: application
+version: 0.1.0
+appVersion: "16.3"
+icon: "https://www.postgresql.org/media/img/about/press/elephant.png"
+maintainers:
+  - name: bubylou
+    email: bubylou@pm.me
