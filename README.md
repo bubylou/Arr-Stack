@@ -1,1 +1,1 @@
-# helm-charts
+# Arr Stack  [![Lint and Test](https://github.com/bubylou/Arr-Stack/actions/workflows/test.yml/badge.svg)](https://github.com/bubylou/Arr-Stack/actions/workflows/test.yml) [![Release](https://github.com/bubylou/Arr-Stack/actions/workflows/release.yml/badge.svg)](https://github.com/bubylou/Arr-Stack/actions/workflows/release.yml) [![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/arr-atack)](https://artifacthub.io/packages/search?repo=arr-atack)
