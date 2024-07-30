@@ -10,14 +10,14 @@ metadata:
 spec:
   containers:
     - name: test
-      image: alpine/httpie
+      image: ghcr.io/jauderho/httpie-go:latest
       env:
         - name: API_KEY
           valueFrom:
             secretKeyRef:
               name: {{ include "app.fullname" . }}
               key: api-key
-      command: ['http']
+      command: ['ht']
       args: ['{{ include "app.fullname" . }}:{{ .Values.service.port }}/api/v3/health', 'X-Api-Key:$API_KEY']
   restartPolicy: Never
 {{- end -}}
