@@ -8,15 +8,11 @@ image:
   repository: postgres
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "16.3"
+  tag: "16.3-alpine"
 
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
-
-environment: []
-  # - name: TZ
-  #   value: Etc/Utc
 
 podAnnotations: {}
 podLabels: {}

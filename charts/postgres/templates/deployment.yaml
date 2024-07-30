@@ -43,7 +43,51 @@ spec:
                 secretKeyRef:
                   name: {{ include "app.fullname" . }}
                   key: POSTGRES_PASSWORD
-          {{- with $env := .Values.env }}{{ toYaml $env | nindent 8 }}{{- end }}
+            - name: BAZARR_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: bazarr
+                  key: postgres-password
+                  optional: true
+            - name: LIDARR_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: lidarr 
+                  key: postgres-password
+                  optional: true
+            - name: PROWLARR_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: prowlarr
+                  key: postgres-password
+                  optional: true
+            - name: RADARR_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: bazarr
+                  key: postgres-password
+                  optional: true
+            - name: READARR_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: readarr
+                  key: postgres-password
+                  optional: true
+            - name: SONARR_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: sonarr
+                  key: postgres-password
+                  optional: true
+          lifecycle:
+            postStart:
+              exec:
+                command: ["/bin/sh", "-c"]
+                args:
+                  - |
+                  createuser bazarr
+                  psql --command "alter user bazarr with encrypted password '${BAZARR_PASSWORD}';"
+                  createdb --owner bazarr bazarr
           ports:
             - name: db
               containerPort: {{ .Values.service.port }}
