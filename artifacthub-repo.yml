@@ -1,0 +1,8 @@
+# Artifact Hub repository metadata file
+#
+repositoryID: e5598863-e418-4448-bf4c-0b118ad67956
+owners:
+  - name: bubylou
+    email: bubylou@pm.me
+ignore:
+  - name: common
