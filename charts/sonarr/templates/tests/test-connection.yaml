@@ -1,2 +1,6 @@
 {{- include "common.test.connection" . }}
-{{ include "common.test.connection.args" . }}
+      args:
+        - |
+          http --ignore-stdin --check-status GET \
+            {{ include "app.fullname" . }}:{{ .Values.service.port }}/api/v3/health \
+            X-Api-Key:$API_KEY
