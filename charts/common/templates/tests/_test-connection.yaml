@@ -7,7 +7,9 @@ metadata:
     {{- include "app.labels" . | nindent 4 }}
   annotations:
     "helm.sh/hook": test
+    "helm.sh/hook-delete-policy": hook-succeeded
 spec:
+  restartPolicy: Never
   containers:
     - name: test
       image: alpine/httpie:latest
@@ -18,7 +20,12 @@ spec:
             secretKeyRef:
               name: {{ include "app.fullname" . }}
               key: api-key
-      command: ['ht']
-      args: ['{{ include "app.fullname" . }}:{{ .Values.service.port }}/api/v3/health', 'X-Api-Key:$API_KEY']
-  restartPolicy: Never
-{{- end -}}
+      command: ['sh', '-c']
+{{ end }}
+{{ define "common.test.connection.args" }}
+      args:
+        - |
+          http --ignore-stdin --check-status GET \
+            {{ include "app.fullname" . }}:{{ .Values.service.port }}/api/v1/health \
+            X-Api-Key:$API_KEY
+{{- end }}
