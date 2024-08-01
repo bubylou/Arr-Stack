@@ -25,7 +25,7 @@ spec:
 {{ define "common.test.connection.args" }}
       args:
         - |
-          http --ignore-stdin --check-status GET \
+          http --ignore-stdin --check-status --timeout 10 GET \
             {{ include "app.fullname" . }}:{{ .Values.service.port }}/api/v1/health \
             X-Api-Key:$API_KEY
 {{- end }}
