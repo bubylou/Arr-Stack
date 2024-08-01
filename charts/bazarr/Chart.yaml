@@ -2,7 +2,7 @@ apiVersion: v2
 name: bazarr
 description: Companion application to Sonarr and Radarr that manages and downloads subtitles
 type: application
-version: 0.1.2
+version: 0.1.3
 appVersion: "release-1.4.3"
 icon: "https://www.bazarr.media/assets/img/logo.png"
 dependencies:
