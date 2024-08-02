@@ -11,7 +11,8 @@ data:
     #!/usr/bin/env sh
 
     add_app() {
-            http --ignore-stdin POST "{{ include "app.fullname" . }}:{{ .Values.service.port }}/api/v1/applications" \
+            http --ignore-stdin --check-status POST \
+                    "{{ include "app.fullname" . }}:{{ .Values.service.port }}/api/v1/applications" \
                     X-Api-Key:$PROWLARR_API_KEY \
                     name=$app \
                     syncLevel=fullSync \
