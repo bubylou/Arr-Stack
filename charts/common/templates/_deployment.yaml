@@ -46,17 +46,9 @@ spec:
               containerPort: {{ .Values.service.port }}
               protocol: TCP
           livenessProbe:
-            exec:
-              command:
-                - /bin/sh
-                - -c
-                - curl "http://127.0.0.1:{{ .Values.service.port }}/api/v3/health?ApiKey=${{ upper .Chart.Name }}__AUTH__APIKEY"
+            {{- toYaml .Values.livenessProbe | nindent 12 }}
           readinessProbe:
-            exec:
-              command:
-                - /bin/sh
-                - -c
-                - curl "http://127.0.0.1:{{ .Values.service.port }}/api/v3/system/status?ApiKey=${{ upper .Chart.Name }}__AUTH__APIKEY"
+            {{- toYaml .Values.readinessProbe | nindent 12 }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           {{- with .Values.volumeMounts }}
