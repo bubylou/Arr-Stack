@@ -8,7 +8,7 @@ image:
   repository: ghcr.io/hotio/bazarr
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "release-1.4.3"
+  tag: "release-1.4.4"
 
 imagePullSecrets: []
 nameOverride: ""
