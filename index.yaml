@@ -123,6 +123,25 @@ entries:
     urls:
     - https://github.com/bubylou/helm-charts/releases/download/common-0.1.0/common-0.1.0.tgz
     version: 0.1.0
+  jellyfin:
+  - apiVersion: v2
+    appVersion: release-10.9.10
+    created: "2024-09-18T01:39:04.469437732Z"
+    dependencies:
+    - name: common
+      repository: file://../common
+      version: 0.2.0
+    description: The Free Software Media System
+    digest: 12d3d4a7593755e0a002e9f590ff0fa5d5ee10fccc8c9fccc8dec39908b26e4d
+    icon: https://jellyfin.org/images/logo.svg
+    maintainers:
+    - email: bubylou@pm.me
+      name: bubylou
+    name: jellyfin
+    type: application
+    urls:
+    - https://github.com/bubylou/Arr-Stack/releases/download/jellyfin-0.1.0/jellyfin-0.1.0.tgz
+    version: 0.1.0
   lidarr:
   - apiVersion: v2
     appVersion: release-2.4.3.4248
@@ -693,4 +712,4 @@ entries:
     urls:
     - https://github.com/bubylou/helm-charts/releases/download/unpackerr-0.1.0/unpackerr-0.1.0.tgz
     version: 0.1.0
-generated: "2024-08-02T03:48:44.528616115Z"
+generated: "2024-09-18T01:39:04.469536657Z"
