@@ -161,6 +161,25 @@ entries:
     urls:
     - https://github.com/bubylou/Arr-Stack/releases/download/jellyfin-0.1.0/jellyfin-0.1.0.tgz
     version: 0.1.0
+  jellyseerr:
+  - apiVersion: v2
+    appVersion: release-1.9.2
+    created: "2024-09-18T19:15:23.352961398Z"
+    dependencies:
+    - name: common
+      repository: file://../common
+      version: 0.2.0
+    description: Fork of overseerr for jellyfin support
+    digest: 66949f419768a3b6290668ae343ae34b7da72664cf134bf0057cfb989704e709
+    icon: https://docs.jellyseerr.dev/img/logo.svg
+    maintainers:
+    - email: bubylou@pm.me
+      name: bubylou
+    name: jellyseerr
+    type: application
+    urls:
+    - https://github.com/bubylou/Arr-Stack/releases/download/jellyseerr-0.1.0/jellyseerr-0.1.0.tgz
+    version: 0.1.0
   lidarr:
   - apiVersion: v2
     appVersion: release-2.5.3.4341
@@ -821,4 +840,4 @@ entries:
     urls:
     - https://github.com/bubylou/helm-charts/releases/download/unpackerr-0.1.0/unpackerr-0.1.0.tgz
     version: 0.1.0
-generated: "2024-09-18T16:49:45.109830614Z"
+generated: "2024-09-18T19:15:23.353063098Z"
