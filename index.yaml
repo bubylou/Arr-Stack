@@ -2,6 +2,25 @@ apiVersion: v1
 entries:
   bazarr:
   - apiVersion: v2
+    appVersion: release-1.4.4
+    created: "2024-09-18T16:49:44.466569961Z"
+    dependencies:
+    - name: common
+      repository: file://../common
+      version: 0.2.0
+    description: Companion application to Sonarr and Radarr that manages and downloads
+      subtitles
+    digest: 043cbfe426a8f9412af2fd5d6d6d5b2af1efccd851359e39565bb954bafa5626
+    icon: https://www.bazarr.media/assets/img/logo.png
+    maintainers:
+    - email: bubylou@pm.me
+      name: bubylou
+    name: bazarr
+    type: application
+    urls:
+    - https://github.com/bubylou/Arr-Stack/releases/download/bazarr-0.2.1/bazarr-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v2
     appVersion: release-1.4.3
     created: "2024-08-02T03:48:43.859157853Z"
     dependencies:
@@ -144,6 +163,24 @@ entries:
     version: 0.1.0
   lidarr:
   - apiVersion: v2
+    appVersion: release-2.5.3.4341
+    created: "2024-09-18T16:49:44.692317858Z"
+    dependencies:
+    - name: common
+      repository: file://../common
+      version: 0.2.0
+    description: Looks and smells like Sonarr but made for music
+    digest: ad3b6577cb1aadffb19062c1fbf26d1357370e957a1bb5300bfe24c7210c9f9c
+    icon: https://lidarr.audio/img/logo.png
+    maintainers:
+    - email: bubylou@pm.me
+      name: bubylou
+    name: lidarr
+    type: application
+    urls:
+    - https://github.com/bubylou/Arr-Stack/releases/download/lidarr-0.2.1/lidarr-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v2
     appVersion: release-2.4.3.4248
     created: "2024-08-02T03:48:44.037017113Z"
     dependencies:
@@ -244,6 +281,24 @@ entries:
     version: 0.1.0
   prowlarr:
   - apiVersion: v2
+    appVersion: release-1.23.1.4708
+    created: "2024-09-18T16:49:44.812096008Z"
+    dependencies:
+    - name: common
+      repository: file://../common
+      version: 0.2.0
+    description: Indexer manager for arr apps
+    digest: 45c899586c593dd7851fa8582bc646ef4af79b40673acc0b7dbfe2bbf1c1e9ca
+    icon: https://avatars.githubusercontent.com/u/73049443
+    maintainers:
+    - email: bubylou@pm.me
+      name: bubylou
+    name: prowlarr
+    type: application
+    urls:
+    - https://github.com/bubylou/Arr-Stack/releases/download/prowlarr-0.2.1/prowlarr-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v2
     appVersion: release-1.21.2.4649
     created: "2024-08-02T03:48:44.149487543Z"
     dependencies:
@@ -313,6 +368,24 @@ entries:
     - https://github.com/bubylou/helm-charts/releases/download/prowlarr-0.1.2/prowlarr-0.1.2.tgz
     version: 0.1.2
   radarr:
+  - apiVersion: v2
+    appVersion: release-5.9.1.9070
+    created: "2024-09-18T16:49:44.912226743Z"
+    dependencies:
+    - name: common
+      repository: file://../common
+      version: 0.2.0
+    description: Movie organizer/manager for usenet and torrent users
+    digest: b9435685373653a4ba8c1564faef66a988ad097b97585ac61c3923df5103b590
+    icon: https://radarr.video/img/logo.png
+    maintainers:
+    - email: bubylou@pm.me
+      name: bubylou
+    name: radarr
+    type: application
+    urls:
+    - https://github.com/bubylou/Arr-Stack/releases/download/radarr-0.2.1/radarr-0.2.1.tgz
+    version: 0.2.1
   - apiVersion: v2
     appVersion: release-5.8.3.8933
     created: "2024-08-02T03:48:44.24945366Z"
@@ -514,6 +587,24 @@ entries:
     version: 0.1.0
   sonarr:
   - apiVersion: v2
+    appVersion: release-4.0.9.2244
+    created: "2024-09-18T16:49:45.024755157Z"
+    dependencies:
+    - name: common
+      repository: file://../common
+      version: 0.2.0
+    description: Smart PVR for newsgroup and bittorrent users
+    digest: 4851345233cc56d490a99a230aa0142dd63d28b30098047b277e5b8456176ad0
+    icon: https://sonarr.tv/img/logo.png
+    maintainers:
+    - email: bubylou@pm.me
+      name: bubylou
+    name: sonarr
+    type: application
+    urls:
+    - https://github.com/bubylou/Arr-Stack/releases/download/sonarr-0.2.1/sonarr-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v2
     appVersion: release-4.0.8.1874
     created: "2024-08-02T03:48:44.447564705Z"
     dependencies:
@@ -614,6 +705,24 @@ entries:
     version: 0.1.0
   unpackerr:
   - apiVersion: v2
+    appVersion: release-0.14.5
+    created: "2024-09-18T16:49:45.10963633Z"
+    dependencies:
+    - name: common
+      repository: file://../common
+      version: 0.2.0
+    description: Extracts downloads for other arr apps
+    digest: 4b66b2739ecc5a8ccbc408af4e2c3149d5850a0a13cd690f8d6198065be37a5e
+    icon: https://unpackerr.zip/img/icon.png
+    maintainers:
+    - email: bubylou@pm.me
+      name: bubylou
+    name: unpackerr
+    type: application
+    urls:
+    - https://github.com/bubylou/Arr-Stack/releases/download/unpackerr-0.2.1/unpackerr-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v2
     appVersion: release-0.14.0
     created: "2024-08-02T03:48:44.528475272Z"
     dependencies:
@@ -712,4 +821,4 @@ entries:
     urls:
     - https://github.com/bubylou/helm-charts/releases/download/unpackerr-0.1.0/unpackerr-0.1.0.tgz
     version: 0.1.0
-generated: "2024-09-18T01:39:04.469536657Z"
+generated: "2024-09-18T16:49:45.109830614Z"
