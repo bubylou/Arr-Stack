@@ -1,0 +1,14 @@
+apiVersion: v2
+name: jellyseerr
+description: Fork of overseerr for jellyfin support
+type: application
+version: 0.1.0
+appVersion: "release-1.9.2"
+icon: "https://docs.jellyseerr.dev/img/logo.svg"
+dependencies:
+- name: common
+  version: 0.2.0
+  repository: file://../common
+maintainers:
+  - name: bubylou
+    email: bubylou@pm.me
