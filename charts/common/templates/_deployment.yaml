@@ -40,7 +40,7 @@ spec:
                 secretKeyRef:
                   name: {{ include "app.fullname" . }}
                   key: api-key
-          {{- with $env := .Values.env }}{{ toYaml $env | nindent 8 }}{{- end }}
+          {{- with $env := .Values.env }}{{ toYaml $env | nindent 12 }}{{- end }}
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}

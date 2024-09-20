@@ -14,7 +14,7 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
-environment: []
+env: []
   # - name: TZ
   #   value: Etc/Utc
 

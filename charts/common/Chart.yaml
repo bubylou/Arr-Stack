@@ -2,7 +2,7 @@ apiVersion: v2
 name: common
 description: A common library for arr apps
 type: library
-version: 0.2.0
+version: 0.2.1
 appVersion: "release-4.0.8.1874"
 icon: "https://sonarr.tv/img/logo.png"
 maintainers:
