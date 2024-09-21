@@ -1,0 +1,14 @@
+apiVersion: v2
+name: lldap
+description: The Free Software Media System
+type: application
+version: 0.1.0
+appVersion: "release-10.9.10"
+icon: "https://lldap.org/images/logo.svg"
+dependencies:
+- name: common
+  version: 0.2.2
+  repository: file://../common
+maintainers:
+  - name: bubylou
+    email: bubylou@pm.me
