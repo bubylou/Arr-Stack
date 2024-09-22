@@ -1,0 +1,67 @@
+{{- if .Values.bootstrap.enabled -}}
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ include "app.fullname" . }}-bootstrap
+  labels:
+    {{- include "app.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": post-install
+spec:
+  template:
+    metadata:
+      name: {{ include "app.fullname" . }}-bootstrap
+      labels:
+        {{- include "app.labels" . | nindent 4 }}
+    spec:
+      restartPolicy: OnFailure
+      dnsPolicy: ClusterFirst
+      containers:
+      - name: {{ .Chart.Name }}
+        securityContext:
+          {{- toYaml .Values.securityContext | nindent 12 }}
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        command: ['/bootstrap/bootstrap.sh']
+        env:
+        - name: LLDAP_URL
+          value: "http://lldap:{{ .Values.service.http.port }}"
+        - name: LLDAP_ADMIN_USERNAME
+          value: admin
+        - name: LLDAP_ADMIN_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: {{ include "app.fullname" . }}
+              key: LLDAP_ADMIN_PASSWORD
+        volumeMounts:
+        - name: bootstrap
+          mountPath: /bootstrap/bootstrap.sh
+          subPath: bootstrap.sh
+        - name: user-configs
+          mountPath: /user-configs
+          readOnly: true
+        - name: group-configs
+          mountPath: /group-configs
+          readOnly: true
+      volumes:
+      - name: bootstrap
+        configMap:
+          name: lldap
+          defaultMode: 0555
+          items:
+            - key: bootstrap.sh
+              path: bootstrap.sh
+      - name: user-configs
+        secret:
+          secretName: {{ include "app.fullname" . }}-bootstrap
+          items:
+            - key: users
+              path: users.json 
+      - name: group-configs
+        secret:
+          secretName: {{ include "app.fullname" . }}-bootstrap
+          items:
+            - key: groups
+              path: groups.json 
+{{- end }}
