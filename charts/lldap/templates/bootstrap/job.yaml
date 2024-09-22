@@ -36,7 +36,7 @@ spec:
               name: {{ include "app.fullname" . }}
               key: LLDAP_ADMIN_PASSWORD
         volumeMounts:
-        - name: bootstrap
+        - name: bootstrap-script
           mountPath: /bootstrap/bootstrap.sh
           subPath: bootstrap.sh
         - name: user-configs
@@ -46,9 +46,9 @@ spec:
           mountPath: /group-configs
           readOnly: true
       volumes:
-      - name: bootstrap
+      - name: bootstrap-script
         configMap:
-          name: lldap
+          name: {{ include "app.fullname" . }}-bootstrap
           defaultMode: 0555
           items:
             - key: bootstrap.sh
