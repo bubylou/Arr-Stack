@@ -32,6 +32,30 @@ securityContext: {}
   # runAsNonRoot: true
   # runAsUser: 1000
 
+ldap:
+  base_dn: dc=example,dc=com
+
+bootstrap:
+  enable: false
+
+  # groups:
+  # - media_admin
+  # - media
+  #
+  # users:
+  # - id: readonly
+  #   email: readonlu@localhost
+  #   groups:
+  #   - lldap_strict_readonly
+  # - id: password_manager
+  #   email: password_manager@localhost
+  #   groups:
+  #   - lldap_password_manager
+  # - id: admin
+  #   email: admin@localhost
+  #   groups:
+  #   - lldap_manager
+
 service:
   http:
     type: ClusterIP
@@ -84,6 +108,3 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
-
-ldap:
-  base_dn: dc=example,dc=com

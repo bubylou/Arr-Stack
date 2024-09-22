@@ -1,3 +1,4 @@
+{{- if .Values.bootstrap.enabled -}}
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -500,3 +501,4 @@ data:
     }
 
     main "$@"
+{{- end }}
