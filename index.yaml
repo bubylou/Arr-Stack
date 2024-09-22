@@ -472,6 +472,25 @@ entries:
     urls:
     - https://github.com/bubylou/helm-charts/releases/download/lidarr-0.1.0/lidarr-0.1.0.tgz
     version: 0.1.0
+  lldap:
+  - apiVersion: v2
+    appVersion: release-10.9.10
+    created: "2024-09-22T03:04:02.957459825Z"
+    dependencies:
+    - name: common
+      repository: file://../common
+      version: 0.2.2
+    description: The Free Software Media System
+    digest: 262090a2b2b23c7412baacc745b998f41c27d8a5f6f4770d4a6c9e64f91e5eb3
+    icon: https://lldap.org/images/logo.svg
+    maintainers:
+    - email: bubylou@pm.me
+      name: bubylou
+    name: lldap
+    type: application
+    urls:
+    - https://github.com/bubylou/Arr-Stack/releases/download/lldap-0.1.0/lldap-0.1.0.tgz
+    version: 0.1.0
   prowlarr:
   - apiVersion: v2
     appVersion: release-1.23.1.4708
@@ -1194,4 +1213,4 @@ entries:
     urls:
     - https://github.com/bubylou/helm-charts/releases/download/unpackerr-0.1.0/unpackerr-0.1.0.tgz
     version: 0.1.0
-generated: "2024-09-20T16:40:27.722008848Z"
+generated: "2024-09-22T03:04:02.957609373Z"
