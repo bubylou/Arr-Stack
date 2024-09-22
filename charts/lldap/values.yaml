@@ -46,6 +46,7 @@ bootstrap:
   # - id: example
   #   email: example@localhost
   #   groups:
+  #   - lldap_admin
   #   - media_admin
   #   - media
 
