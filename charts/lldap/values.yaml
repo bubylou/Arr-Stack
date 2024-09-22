@@ -43,18 +43,11 @@ bootstrap:
   # - media
   #
   # users:
-  # - id: readonly
-  #   email: readonlu@localhost
+  # - id: example
+  #   email: example@localhost
   #   groups:
-  #   - lldap_strict_readonly
-  # - id: password_manager
-  #   email: password_manager@localhost
-  #   groups:
-  #   - lldap_password_manager
-  # - id: admin
-  #   email: admin@localhost
-  #   groups:
-  #   - lldap_manager
+  #   - media_admin
+  #   - media
 
 service:
   http:
