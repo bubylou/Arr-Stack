@@ -73,7 +73,6 @@ readinessProbe:
     path: /
     port: http
 
-
 # Additional volumes on the output Deployment definition.
 volumes: []
 # - name: lidarr-config

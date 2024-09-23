@@ -1,0 +1,9 @@
+{{- define "arr.deployment" }}
+{{- include "common.deployment" . }}
+          env:
+            - name: {{ upper .Chart.Name }}__AUTH__APIKEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "app.fullname" . }}
+                  key: api-key
+{{- end }}
