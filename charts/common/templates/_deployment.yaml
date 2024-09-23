@@ -35,11 +35,6 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
-            - name: {{ upper .Chart.Name }}__AUTH__APIKEY
-              valueFrom:
-                secretKeyRef:
-                  name: {{ include "app.fullname" . }}
-                  key: api-key
           {{- with $env := .Values.env }}{{ toYaml $env | nindent 12 }}{{- end }}
           ports:
             - name: http
@@ -71,4 +66,13 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+{{- end }}
+
+{{- define "arr.deployment" -}}
+{{- include "common.deployment" -}}
+            - name: {{ upper .Chart.Name }}__AUTH__APIKEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "app.fullname" . }}
+                  key: api-key
 {{- end }}
