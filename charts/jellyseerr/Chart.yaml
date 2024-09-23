@@ -2,7 +2,7 @@ apiVersion: v2
 name: jellyseerr
 description: Fork of overseerr for jellyfin support
 type: application
-version: 0.1.2
+version: 0.1.3
 appVersion: "release-1.9.2"
 icon: "https://docs.jellyseerr.dev/img/logo.svg"
 dependencies:

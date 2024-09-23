@@ -2,7 +2,7 @@ apiVersion: v2
 name: lldap
 description: The Free Software Media System
 type: application
-version: 0.1.1
+version: 0.1.2
 appVersion: "release-10.9.10"
 dependencies:
 - name: common
