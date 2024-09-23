@@ -118,6 +118,20 @@ entries:
   common:
   - apiVersion: v2
     appVersion: release-4.0.8.1874
+    created: "2024-09-23T21:30:50.404512098Z"
+    description: A common library for arr apps
+    digest: 6bb6760e431f098debf2febcd2768195bbf6a80e865eb8e3ab8de7da6c643f3a
+    icon: https://sonarr.tv/img/logo.png
+    maintainers:
+    - email: bubylou@pm.me
+      name: bubylou
+    name: common
+    type: library
+    urls:
+    - https://github.com/bubylou/Arr-Stack/releases/download/common-0.3.0/common-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v2
+    appVersion: release-4.0.8.1874
     created: "2024-09-20T16:40:26.727571365Z"
     description: A common library for arr apps
     digest: e0f768035c4ecbdba390292a0a59890944c15970da2cf357f699770f7922ac58
@@ -211,6 +225,24 @@ entries:
   jellyfin:
   - apiVersion: v2
     appVersion: release-10.9.10
+    created: "2024-09-23T21:30:50.576924337Z"
+    dependencies:
+    - name: common
+      repository: file://../common
+      version: 0.3.0
+    description: The Free Software Media System
+    digest: 11d536d6d3cfcaf4f62814d0be636da51591828737dcf2562278310349e83e97
+    icon: https://jellyfin.org/images/logo.svg
+    maintainers:
+    - email: bubylou@pm.me
+      name: bubylou
+    name: jellyfin
+    type: application
+    urls:
+    - https://github.com/bubylou/Arr-Stack/releases/download/jellyfin-0.2.0/jellyfin-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
+    appVersion: release-10.9.10
     created: "2024-09-23T18:24:31.328228717Z"
     dependencies:
     - name: common
@@ -282,6 +314,24 @@ entries:
     - https://github.com/bubylou/Arr-Stack/releases/download/jellyfin-0.1.0/jellyfin-0.1.0.tgz
     version: 0.1.0
   jellyseerr:
+  - apiVersion: v2
+    appVersion: release-1.9.2
+    created: "2024-09-23T21:30:50.751061243Z"
+    dependencies:
+    - name: common
+      repository: file://../common
+      version: 0.3.0
+    description: Fork of overseerr for jellyfin support
+    digest: f51409e243b3d5e6ca038733aa4c18f214068a7f1ddf8670ec58cb1fd4bfb310
+    icon: https://docs.jellyseerr.dev/img/logo.svg
+    maintainers:
+    - email: bubylou@pm.me
+      name: bubylou
+    name: jellyseerr
+    type: application
+    urls:
+    - https://github.com/bubylou/Arr-Stack/releases/download/jellyseerr-0.2.0/jellyseerr-0.2.0.tgz
+    version: 0.2.0
   - apiVersion: v2
     appVersion: release-1.9.2
     created: "2024-09-23T18:24:31.455758193Z"
@@ -1283,4 +1333,4 @@ entries:
     urls:
     - https://github.com/bubylou/helm-charts/releases/download/unpackerr-0.1.0/unpackerr-0.1.0.tgz
     version: 0.1.0
-generated: "2024-09-23T18:24:31.585722081Z"
+generated: "2024-09-23T21:30:50.751202897Z"
