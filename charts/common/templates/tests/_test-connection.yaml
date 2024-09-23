@@ -14,18 +14,22 @@ spec:
     - name: test
       image: alpine/httpie:latest
       imagePullPolicy: IfNotPresent
+      command: ['sh', '-c']
+{{- end }}
+
+{{- define "common.test.connection.args" }}
+      args:
+        - |
+          http --ignore-stdin --check-status --timeout 10 GET \
+            {{ include "app.fullname" . }}:{{ .Values.service.port }}/health
+{{- end }}
+
+{{- define "arr.test.connection" -}}
+{{- include "common.test.connection" -}}
       env:
         - name: API_KEY
           valueFrom:
             secretKeyRef:
               name: {{ include "app.fullname" . }}
               key: api-key
-      command: ['sh', '-c']
-{{ end }}
-{{ define "common.test.connection.args" }}
-      args:
-        - |
-          http --ignore-stdin --check-status --timeout 10 GET \
-            {{ include "app.fullname" . }}:{{ .Values.service.port }}/api/v1/health \
-            X-Api-Key:$API_KEY
-{{- end }}
+{{- end -}}
