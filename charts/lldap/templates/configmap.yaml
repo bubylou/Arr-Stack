@@ -1,0 +1,47 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "app.fullname" . }}
+  labels:
+    {{- include "app.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": pre-install
+data:
+  config: |-
+    verbose = false
+    # ldap_host = "0.0.0.0"
+    ldap_port = {{ .Values.service.ldap.port }}
+    # http_host = "0.0.0.0"
+    http_port = {{ .Values.service.http.port }}
+    http_url = {{ .Values.ingress.hosts | quote }}
+    # jwt_secret = "REPLACE_WITH_RANDOM"
+    ldap_base_dn = {{ .Values.ldap.base_dn | quote }}
+
+    # ldap_user_dn = "admin"
+    # ldap_user_email = "admin@example.com"
+    # ldap_user_pass = "REPLACE_WITH_PASSWORD"
+    # force_ldap_user_pass_reset = false
+
+    database_url = "sqlite:///data/users.db?mode=rwc"
+    # key_file = "/data/private_key"
+    # key_seed = "RanD0m STR1ng"
+
+    # ignored_user_attributes = [ "sAMAccountName" ]
+    # ignored_group_attributes = [ "mail", "userPrincipalName" ]
+
+    [smtp_options]
+    # enable_password_reset=true
+    # server="smtp.gmail.com"
+    # port=587
+    # smtp_encryption = "TLS"
+    # user="sender@gmail.com"
+    # password="password"
+    # from="LLDAP Admin <sender@gmail.com>"
+    # reply_to="Do not reply <noreply@localhost>"
+
+    [ldaps_options]
+    # enabled=true
+    # port=6360
+    # cert_file="/data/cert.pem"
+    # key_file="/data/key.pem"
