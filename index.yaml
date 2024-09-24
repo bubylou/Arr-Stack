@@ -611,6 +611,25 @@ entries:
     urls:
     - https://github.com/bubylou/Arr-Stack/releases/download/lldap-0.1.0/lldap-0.1.0.tgz
     version: 0.1.0
+  navidrome:
+  - apiVersion: v2
+    appVersion: 0.53.2
+    created: "2024-09-24T16:02:54.910370446Z"
+    dependencies:
+    - name: common
+      repository: file://../common
+      version: 0.3.0
+    description: Modern Music Server and Streamer compatible with Subsonic/Airsonic
+    digest: 382dfa755ffe68b8b22d050ab60795b647cd1672f3139c470cd93556e14f21b1
+    icon: https://avatars.githubusercontent.com/u/26692192
+    maintainers:
+    - email: bubylou@pm.me
+      name: bubylou
+    name: navidrome
+    type: application
+    urls:
+    - https://github.com/bubylou/Arr-Stack/releases/download/navidrome-0.1.0/navidrome-0.1.0.tgz
+    version: 0.1.0
   prowlarr:
   - apiVersion: v2
     appVersion: release-1.23.1.4708
@@ -1333,4 +1352,4 @@ entries:
     urls:
     - https://github.com/bubylou/helm-charts/releases/download/unpackerr-0.1.0/unpackerr-0.1.0.tgz
     version: 0.1.0
-generated: "2024-09-23T21:30:50.751202897Z"
+generated: "2024-09-24T16:02:54.910526026Z"
