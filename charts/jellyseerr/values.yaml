@@ -64,6 +64,15 @@ resources: {}
   #   cpu: 100m
   #   memory: 128Mi
 
+livenessProbe:
+  httpGet:
+    path: /api/v1/status
+    port: http
+readinessProbe:
+  httpGet:
+    path: /api/v1/status
+    port: http
+
 # Additional volumes on the output Deployment definition.
 volumes: []
 # - name: jellyseerr-config
