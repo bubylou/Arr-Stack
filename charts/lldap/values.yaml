@@ -38,6 +38,7 @@ ldap:
   ignored_user_attributes: ["sAMAccountName"]
   ignored_group_attributes: ["mail", "userPrincipalName"]
   key_file: /data/private_key
+  port: 3890
   user_dn: admin
   user_email: admin@example.com
   verbose: false
@@ -73,12 +74,9 @@ bootstrap:
   #   - media
 
 service:
-  http:
-    type: ClusterIP
-    port: 17170
-  ldap:
-    type: ClusterIP
-    port: 3890
+  type: ClusterIP
+  port: 17170
+
 
 ingress:
   enabled: false

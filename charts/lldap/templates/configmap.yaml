@@ -11,9 +11,9 @@ data:
   config: |-
     verbose = {{ .Values.ldap.verbose }}
     # ldap_host = "0.0.0.0"
-    ldap_port = {{ .Values.service.ldap.port }}
+    ldap_port = {{ .Values.ldap.port }}
     # http_host = "0.0.0.0"
-    http_port = {{ .Values.service.http.port }}
+    http_port = {{ .Values.service.port }}
     http_url = {{ .Values.ingress.hosts | quote }}
     # jwt_secret = "REPLACE_WITH_RANDOM"
     ldap_base_dn = {{ .Values.ldap.base_dn | quote }}
