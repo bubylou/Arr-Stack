@@ -2,13 +2,9 @@ apiVersion: v2
 name: unpackerr
 description: Extracts downloads for other arr apps
 type: application
-version: 0.2.3
+version: 0.2.4
 appVersion: "release-0.14.5"
 icon: "https://unpackerr.zip/img/icon.png"
-dependencies:
-- name: common
-  version: 0.2.2
-  repository: file://../common
 maintainers:
   - name: bubylou
     email: bubylou@pm.me
