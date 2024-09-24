@@ -575,6 +575,23 @@ entries:
   lldap:
   - apiVersion: v2
     appVersion: release-10.9.10
+    created: "2024-09-24T23:13:51.388050637Z"
+    dependencies:
+    - name: common
+      repository: file://../common
+      version: 0.3.1
+    description: The Free Software Media System
+    digest: b3960764c322d58553127164137828a9e3df64d1991ebabb2d6bbfd36fd2fb49
+    maintainers:
+    - email: bubylou@pm.me
+      name: bubylou
+    name: lldap
+    type: application
+    urls:
+    - https://github.com/bubylou/Arr-Stack/releases/download/lldap-0.2.2/lldap-0.2.2.tgz
+    version: 0.2.2
+  - apiVersion: v2
+    appVersion: release-10.9.10
     created: "2024-09-24T23:06:08.812918094Z"
     dependencies:
     - name: common
@@ -1400,4 +1417,4 @@ entries:
     urls:
     - https://github.com/bubylou/helm-charts/releases/download/unpackerr-0.1.0/unpackerr-0.1.0.tgz
     version: 0.1.0
-generated: "2024-09-24T23:06:08.813087851Z"
+generated: "2024-09-24T23:13:51.388215618Z"
