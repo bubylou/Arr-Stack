@@ -34,6 +34,28 @@ securityContext: {}
 
 ldap:
   base_dn: dc=example,dc=com
+  force_user_pass_reset: false
+  ignored_user_attributes: ["sAMAccountName"]
+  ignored_group_attributes: ["mail", "userPrincipalName"]
+  key_file: /data/private_key
+  user_dn: admin
+  user_email: admin@example.com
+  verbose: false
+
+  smtp:
+    enable_password_reset: true
+    server: "smtp.gmail.com"
+    port: 587
+    smtp_encryption: "TLS"
+    user: "sender@gmail.com"
+    from: "LLDAP Admin <sender@gmail.com>"
+    reply_to: "Do not reply <noreply@localhost>"
+
+  ldaps:
+    enabled: true
+    port: 6360
+    cert_file: "/data/cert.pem"
+    key_file: "/data/key.pem"
 
 bootstrap:
   enable: false
