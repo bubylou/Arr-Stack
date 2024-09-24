@@ -1,22 +1,2 @@
----
-apiVersion: v1
-kind: Pod
-metadata:
-  name: {{ include "app.fullname" . }}-test-connection
-  labels:
-    {{- include "app.labels" . | nindent 4 }}
-  annotations:
-    "helm.sh/hook": test
-    "helm.sh/hook-delete-policy": hook-succeeded
-spec:
-  restartPolicy: Never
-  containers:
-    - name: test
-      image: alpine/httpie:latest
-      imagePullPolicy: IfNotPresent
-      env:
-      command: ['sh', '-c']
-      args:
-        - |
-          http --ignore-stdin --check-status --timeout 10 GET \
-            {{ include "app.fullname" . }}:{{ .Values.service.http.port }}/health
+{{- include "common.test.connection" . }}
+{{- include "common.test.connection.args" . }}

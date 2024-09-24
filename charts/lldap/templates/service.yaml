@@ -5,6 +5,8 @@ metadata:
   labels:
     {{- include "app.labels" . | nindent 4 }}
 spec:
+  selector:
+    {{- include "app.selectorLabels" . | nindent 4 }}
   type: {{ .Values.service.type }}
   ports:
     - port: {{ .Values.service.http.port }}
@@ -15,5 +17,3 @@ spec:
       targetPort: ldap
       protocol: TCP
       name: ldap
-  selector:
-    {{- include "app.selectorLabels" . | nindent 4 }}
