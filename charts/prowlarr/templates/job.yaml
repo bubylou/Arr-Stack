@@ -1,4 +1,3 @@
-# https://kubernetes.io/docs/concepts/workloads/controllers/job/
 ---
 apiVersion: batch/v1
 kind: Job
@@ -6,6 +5,8 @@ metadata:
   name: prowlarr-bootstrap
   labels:
     {{- include "app.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": post-install
 spec:
   template:
     metadata:
