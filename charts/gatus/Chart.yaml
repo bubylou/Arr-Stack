@@ -1,0 +1,14 @@
+apiVersion: v2
+name: gatus
+description: Automated developer-oriented status page
+type: application
+version: 0.1.0
+appVersion: "v5.12.1"
+icon: "https://gatus.io/img/logo-with-light-text.svg"
+dependencies:
+- name: common
+  version: 0.3.0
+  repository: file://../common
+maintainers:
+  - name: bubylou
+    email: bubylou@pm.me
