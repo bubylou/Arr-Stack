@@ -118,6 +118,20 @@ entries:
   common:
   - apiVersion: v2
     appVersion: release-4.0.8.1874
+    created: "2024-09-24T23:06:08.685255206Z"
+    description: A common library for arr apps
+    digest: 8c7eb58e996fa4720fe42c11239dadfd04d49aa226d64fe8559f06dbe0af2680
+    icon: https://sonarr.tv/img/logo.png
+    maintainers:
+    - email: bubylou@pm.me
+      name: bubylou
+    name: common
+    type: library
+    urls:
+    - https://github.com/bubylou/Arr-Stack/releases/download/common-0.3.1/common-0.3.1.tgz
+    version: 0.3.1
+  - apiVersion: v2
+    appVersion: release-4.0.8.1874
     created: "2024-09-23T21:30:50.404512098Z"
     description: A common library for arr apps
     digest: 6bb6760e431f098debf2febcd2768195bbf6a80e865eb8e3ab8de7da6c643f3a
@@ -559,6 +573,23 @@ entries:
     - https://github.com/bubylou/helm-charts/releases/download/lidarr-0.1.0/lidarr-0.1.0.tgz
     version: 0.1.0
   lldap:
+  - apiVersion: v2
+    appVersion: release-10.9.10
+    created: "2024-09-24T23:06:08.812918094Z"
+    dependencies:
+    - name: common
+      repository: file://../common
+      version: 0.3.1
+    description: The Free Software Media System
+    digest: f6decc111065c6b928140821c1d8d869caa0b0c64526fa9c3cdc826c6bb2ce04
+    maintainers:
+    - email: bubylou@pm.me
+      name: bubylou
+    name: lldap
+    type: application
+    urls:
+    - https://github.com/bubylou/Arr-Stack/releases/download/lldap-0.2.1/lldap-0.2.1.tgz
+    version: 0.2.1
   - apiVersion: v2
     appVersion: release-10.9.10
     created: "2024-09-24T22:44:02.216100809Z"
@@ -1369,4 +1400,4 @@ entries:
     urls:
     - https://github.com/bubylou/helm-charts/releases/download/unpackerr-0.1.0/unpackerr-0.1.0.tgz
     version: 0.1.0
-generated: "2024-09-24T22:44:02.216205335Z"
+generated: "2024-09-24T23:06:08.813087851Z"
