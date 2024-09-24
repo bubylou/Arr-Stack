@@ -1,2 +1,5 @@
 {{- include "common.test.connection" . }}
-{{- include "common.test.connection.args" . }}
+      args:
+        - |
+          http --ignore-stdin --check-status --timeout 10 GET \
+            {{ include "app.fullname" . }}:{{ .Values.service.http.port }}/health
