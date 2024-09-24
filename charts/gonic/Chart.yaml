@@ -1,0 +1,14 @@
+apiVersion: v2
+name: gonic
+description: music streaming server / free-software subsonic server API implementation
+type: application
+version: 0.1.0
+appVersion: "v0.16.4"
+icon: "https://raw.githubusercontent.com/sentriz/gonic/refs/heads/master/.github/logo.png"
+dependencies:
+- name: common
+  version: 0.3.0
+  repository: file://../common
+maintainers:
+  - name: bubylou
+    email: bubylou@pm.me
