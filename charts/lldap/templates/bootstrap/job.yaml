@@ -27,7 +27,7 @@ spec:
         command: ['/bootstrap/bootstrap.sh']
         env:
         - name: LLDAP_URL
-          value: "http://lldap:{{ .Values.service.http.port }}"
+          value: "http://lldap:{{ .Values.service.port }}"
         - name: LLDAP_ADMIN_USERNAME
           value: admin
         - name: LLDAP_ADMIN_PASSWORD
