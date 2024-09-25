@@ -1,0 +1,26 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: unpackerr
+  labels:
+    {{- include "app.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": pre-install
+data:
+  config: |-
+    [[lidarr]]
+    url = "http://lidarr.{{ .Release.Namespace }}.svc:8686"
+    api_key = "filepath:/secrets/radarr/api-key"
+
+    [[radarr]]
+    url = "http://radarr.{{ .Release.Namespace }}.svc:7878"
+    api_key = "filepath:/secrets/radarr"
+
+    [[readarr]]
+    url = "http://readarr.{{ .Release.Namespace }}.svc:8787"
+    api_key = "filepath:/secrets/readarr"
+
+    [[sonarr]]
+    url = "http://sonarr.{{ .Release.Namespace }}.svc:8989"
+    api_key = "filepath:/secrets/sonarr"
