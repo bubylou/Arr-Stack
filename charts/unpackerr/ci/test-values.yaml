@@ -1,2 +1,8 @@
+lidarr:
+  enabled: true
+radarr:
+  enabled: true
+readarr:
+  enabled: true
 sonarr:
   enabled: true
