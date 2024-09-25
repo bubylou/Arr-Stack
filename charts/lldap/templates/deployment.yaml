@@ -54,10 +54,10 @@ spec:
           {{- with $env := .Values.env }}{{ toYaml $env | nindent 12 }}{{- end }}
           ports:
             - name: http
-              containerPort: {{ .Values.service.http.port }}
+              containerPort: {{ .Values.service.port }}
               protocol: TCP
             - name: ldap
-              containerPort: {{ .Values.service.ldap.port }}
+              containerPort: {{ .Values.ldap.port }}
               protocol: TCP
           livenessProbe:
             {{- toYaml .Values.livenessProbe | nindent 12 }}

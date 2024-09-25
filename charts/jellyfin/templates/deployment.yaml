@@ -1,1 +1,5 @@
 {{- include "common.deployment" . }}
+          lifecycle:
+            postStart:
+              exec:
+                command: ["/bin/sh", "-c", "chown hotio /usr/share/jellyfin/web/index.html"]

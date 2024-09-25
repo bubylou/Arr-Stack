@@ -1,20 +1,20 @@
-# Default values for lldap.
+# Default values for navidrome.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
 
 image:
-  repository: ghcr.io/lldap/lldap
+  repository: ghcr.io/navidrome/navidrome
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "v0.5.0"
+  tag: "0.53.2"
 
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
-environment: []
+env: []
   # - name: TZ
   #   value: Etc/Utc
 
@@ -32,51 +32,9 @@ securityContext: {}
   # runAsNonRoot: true
   # runAsUser: 1000
 
-ldap:
-  base_dn: dc=example,dc=com
-  force_user_pass_reset: false
-  ignored_user_attributes: ["sAMAccountName"]
-  ignored_group_attributes: ["mail", "userPrincipalName"]
-  key_file: /data/private_key
-  port: 3890
-  user_dn: admin
-  user_email: admin@example.com
-  verbose: false
-
-  smtp:
-    enable_password_reset: true
-    server: "smtp.gmail.com"
-    port: 587
-    smtp_encryption: "TLS"
-    user: "sender@gmail.com"
-    from: "LLDAP Admin <sender@gmail.com>"
-    reply_to: "Do not reply <noreply@localhost>"
-
-  ldaps:
-    enabled: true
-    port: 6360
-    cert_file: "/data/cert.pem"
-    key_file: "/data/key.pem"
-
-bootstrap:
-  enable: false
-
-  # groups:
-  # - media_admin
-  # - media
-  #
-  # users:
-  # - id: example
-  #   email: example@localhost
-  #   groups:
-  #   - lldap_admin
-  #   - media_admin
-  #   - media
-
 service:
   type: ClusterIP
-  port: 17170
-
+  port: 4533
 
 ingress:
   enabled: false
@@ -108,23 +66,30 @@ resources: {}
 
 livenessProbe:
   httpGet:
-    path: /health
+    path: /ping
     port: http
 readinessProbe:
   httpGet:
-    path: /health
+    path: /ping
     port: http
 
 # Additional volumes on the output Deployment definition.
 volumes: []
-# - name: lldap-data
+# - name: navidrome-data
 #   persistentVolumeClaim:
-#     claimName: lldap-data
+#     claimName: navidrome-pvc
+# - name: nfs-nas01
+#   nfs:
+#     server: nas01.local
+#     path: /srv/share
 
 # Additional volumeMounts on the output Deployment definition.
 volumeMounts: []
-# - name: lldap-data
+# - name: navidrome-data
 #   mountPath: "/data"
+# - name: nfs-nas01
+#   mountPath: "/music"
+#   subPath: TV
 
 nodeSelector: {}
 

@@ -1,0 +1,14 @@
+apiVersion: v2
+name: navidrome
+description: Modern Music Server and Streamer compatible with Subsonic/Airsonic
+type: application
+version: 0.1.0
+appVersion: "0.53.2"
+icon: "https://avatars.githubusercontent.com/u/26692192"
+dependencies:
+- name: common
+  version: 0.3.0
+  repository: file://../common
+maintainers:
+  - name: bubylou
+    email: bubylou@pm.me
