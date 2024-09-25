@@ -1,0 +1,15 @@
+bootstrap:
+  enable: true
+  groups:
+  - media_admin
+  - media
+
+  users:
+  - id: example
+    email: example@localhost
+    groups:
+    - lldap_admin
+    - media_admin
+    - media
+ingress:
+  enabled: true
