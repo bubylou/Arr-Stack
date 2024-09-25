@@ -9,6 +9,37 @@ metadata:
     "helm.sh/hook": pre-install
 data:
   config: |-
+    debug = {{ .Values.config.debug }}
+    quiet = {{ .Values.config.quiet }}
+    error_stderr = {{ .Values.config.error_stderr }}
+    activity = {{ .Values.config.activity }}
+    log_queues = {{ .Values.config.log_queues | quote }}
+    log_file = {{ .Values.config.log_file | quote }}
+    log_files = {{ .Values.config.log_files }}
+    log_file_mb = {{ .Values.config.log_file_mb }}
+    interval = {{ .Values.config.interval | quote }}
+    start_delay = {{ .Values.config.start_delay | quote }}
+    retry_delay = {{ .Values.config.retry_delay | quote }}
+    max_retries = {{ .Values.config.max_retries }}
+    parallel = {{ .Values.config.parallel }}
+    file_mode = {{ .Values.config.file_mode | quote }}
+    dir_mode = {{ .Values.config.dir_mode | quote }}
+
+    [webserver]
+     metrics = {{ .Values.config.webserver.metrics }}
+     listen_addr = {{ .Values.config.webserver.listen_addr | quote }}
+     log_file = {{ .Values.config.webserver.log_file | quote }}
+     log_files = {{ .Values.config.webserver.log_files }}
+     log_file_mb = {{ .Values.config.webserver.log_file_mb }}
+     ssl_cert_file = {{ .Values.config.webserver.ssl_cert_file | quote }}
+     ssl_key_file = {{ .Values.config.webserver.ssl_key_file | quote }}
+     urlbase = {{ .Values.config.webserver.urlbase | quote }}
+     upstreams = {{ .Values.config.webserver.upstreams }}
+
+    [folders]
+     interval = {{ .Values.config.folders.interval | quote }}
+     buffer = {{ .Values.config.folders.buffer }}
+
     [[lidarr]]
     url = "http://lidarr.{{ .Release.Namespace }}.svc:8686"
     api_key = "filepath:/secrets/radarr/api-key"
@@ -24,3 +55,37 @@ data:
     [[sonarr]]
     url = "http://sonarr.{{ .Release.Namespace }}.svc:8989"
     api_key = "filepath:/secrets/sonarr"
+
+    [[folder]]
+     path = {{ .Values.config.folder.path | quote }}
+     extract_path = {{ .Values.config.folder.extract_path | quote }}
+     delete_after = {{ .Values.config.folder.delete_after | quote }}
+     disable_recursion = {{ .Values.config.folder.disable_recursion }}
+     delete_files = {{ .Values.config.folder.delete_files }}
+     delete_original = {{ .Values.config.folder.delete_original }}
+     disable_log = {{ .Values.config.folder.disable_log }}
+     move_back = {{ .Values.config.folder.move_back }}
+     extract_isos = {{ .Values.config.folder.extract_isos }}
+
+    [[webhook]]
+     url = {{ .Values.config.webhook.url | quote }}
+     name = {{ .Values.config.webhook.name | quote }}
+     silent = {{ .Values.config.webhook.silent }}
+     events = {{ .Values.config.webhook.events }}
+     nickname = {{ .Values.config.webhook.nickname | quote }}
+     channel = {{ .Values.config.webhook.channel | quote }}
+     exclude = {{ .Values.config.webhook.exclude }}
+     template_path = {{ .Values.config.webhook.template_path | quote }}
+     template = {{ .Values.config.webhook.template | quote }}
+     ignore_ssl = {{ .Values.config.webhook.ignore_ssl }}
+     timeout = {{ .Values.config.webhook.timeout | quote }}
+     content_type = {{ .Values.config.webhook.content_type | quote }}
+
+    [[cmdhook]]
+     command = {{ .Values.config.cmdhook.command | quote }}
+     name = {{ .Values.config.cmdhook.name | quote }}
+     shell = {{ .Values.config.cmdhook.shell }}
+     silent = {{ .Values.config.cmdhook.silent }}
+     events = {{ .Values.config.cmdhook.events }}
+     exclude = {{ .Values.config.cmdhook.exclude }}
+     timeout = {{ .Values.config.cmdhook.timeout | quote }}
