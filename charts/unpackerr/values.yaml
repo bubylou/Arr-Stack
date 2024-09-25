@@ -32,6 +32,10 @@ securityContext: {}
   # runAsNonRoot: true
   # runAsUser: 1000
 
+service:
+  type: ClusterIP
+  port: 5656
+
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
@@ -46,21 +50,15 @@ resources: {}
 
 # Additional volumes on the output Deployment definition.
 volumes: []
-# - name: unpackerr-config
-#   persistentVolumeClaim:
-#     claimName: unpackerr-pvc
 # - name: nfs-nas01
 #   nfs:
 #     server: nas01.local
-#     path: /srv/share
+#     path: /srv/share/Downloads
 
 # Additional volumeMounts on the output Deployment definition.
 volumeMounts: []
-# - name: unpackerr-config
-#   mountPath: "/config"
 # - name: nfs-nas01
-#   mountPath: "/data/tv"
-#   subPath: TV
+#   mountPath: "/data/downloads"
 
 nodeSelector: {}
 
