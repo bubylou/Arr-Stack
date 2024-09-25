@@ -7,7 +7,7 @@ appVersion: "release-1.23.1.4708"
 icon: "https://avatars.githubusercontent.com/u/73049443"
 dependencies:
 - name: common
-  version: 0.3.2
+  version: 0.3.3
   repository: file://../common
 maintainers:
   - name: bubylou
