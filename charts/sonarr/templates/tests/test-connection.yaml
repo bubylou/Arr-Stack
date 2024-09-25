@@ -1,4 +1,4 @@
-{{- include "common.test.connection" . }}
+{{- include "arr.test.connection" . }}
       args:
         - |
           http --ignore-stdin --check-status --timeout 10 GET \
