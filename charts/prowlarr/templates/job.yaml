@@ -1,34 +1,30 @@
-# https://kubernetes.io/docs/concepts/workloads/controllers/job/
 ---
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: prowlarr-bootstrap
+  name: {{ include "app.fullname" . }}-bootstrap
   labels:
     {{- include "app.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": post-install
+    "helm.sh/hook-delete-policy": hook-succeeded
 spec:
   template:
     metadata:
-      {{- with .Values.podAnnotations }}
-      annotations:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
+      name: {{ include "app.fullname" . }}-bootstrap
       labels:
-        {{- include "app.labels" . | nindent 8 }}
-        {{- with .Values.podLabels }}
-        {{- toYaml . | nindent 8 }}
-        {{- end }}
+        {{- include "app.labels" . | nindent 4 }}
     spec:
       restartPolicy: OnFailure
       containers:
-        - name: prowlarr-bootstrap
+        - name: {{ include "app.fullname" . }}
           image: alpine/httpie
           command: ['/bootstrap/bootstrap.sh']
           env:
             - name: PROWLARR_API_KEY
               valueFrom:
                 secretKeyRef:
-                  name: prowlarr
+                  name: {{ include "app.fullname" . }}
                   key: api-key
                   optional: false
             - name: LIDARR_API_KEY
