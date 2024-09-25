@@ -33,48 +33,57 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          env:
-            - name: UN_LIDARR_0_URL
-              value: "http://lidarr.{{ .Release.Namespace }}.svc:8686"
-            - name: UN_LIDARR_0_API_KEY
-              valueFrom:
-                secretKeyRef:
-                  name: lidarr 
-                  key: api-key
-                  optional: true
-            - name: UN_RADARR_0_URL
-              value: "http://radarr.{{ .Release.Namespace }}.svc:7878"
-            - name: UN_RADARR_0_API_KEY
-              valueFrom:
-                secretKeyRef:
-                  name: radarr
-                  key: api-key
-                  optional: true
-            - name: UN_READARR_0_URL
-              value: "http://readarr.{{ .Release.Namespace }}.svc:8787"
-            - name: UN_READARR_0_API_KEY
-              valueFrom:
-                secretKeyRef:
-                  name: readarr
-                  key: api-key
-                  optional: true
-            - name: UN_SONARR_0_URL
-              value: "http://sonarr.{{ .Release.Namespace }}.svc:8989"
-            - name: UN_SONARR_0_API_KEY
-              valueFrom:
-                secretKeyRef:
-                  name: sonarr
-                  key: api-key
-                  optional: true
           {{- with $env := .Values.env }}{{ toYaml $env | nindent 12 }}{{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-          {{- with .Values.volumeMounts }}
           volumeMounts:
+            - mountPath: /config
+              name: config
+            - mountPath: /secrets
+              name: secrets
+              readOnly: true
+          {{- with .Values.volumeMounts }}
             {{- toYaml . | nindent 12 }}
           {{- end }}
-      {{- with .Values.volumes }}
       volumes:
+        - name: config
+          configMap:
+            name: unpackerr
+            items:
+              - key: config
+                path: unpackerr.conf
+        - name: secrets
+          projected:
+            sources:
+            {{- if .Values.lidarr.enabled -}}
+            - secret:
+                name: lidarr
+                items:
+                - key: api-key
+                path: lidarr
+            {{- end }}
+            {{- if .Values.radarr.enabled -}}
+            - secret:
+                name: radarr
+                items:
+                - key: api-key
+                  path: radarr
+            {{- end }}
+            {{- if .Values.readarr.enabled -}}
+            - secret:
+                name: readarr
+                items:
+                - key: api-key
+                  path: readarr
+            {{- end }}
+            {{- if .Values.sonarr.enabled -}}
+            - secret:
+                name: sonarr
+                items:
+                - key: api-key
+                  path: sonarr
+            {{- end }}
+      {{- with .Values.volumes }}
         {{- toYaml . | nindent 8 }}
       {{- end }}
       {{- with .Values.nodeSelector }}
