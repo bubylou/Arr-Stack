@@ -32,6 +32,46 @@ securityContext: {}
   # runAsNonRoot: true
   # runAsUser: 1000
 
+lidarr:
+  enabled: false
+  url: "http://lidarr:8686"
+  paths: ['/downloads']
+  protocols: "torrent"
+  timeout: "10s"
+  delete_delay: "5m"
+  delete_orig: false
+  syncthing: false
+
+radarr:
+  enabled: false
+  url: "http://radarr:7878"
+  paths: ['/downloads']
+  protocols: "torrent"
+  timeout: "10s"
+  delete_delay: "5m"
+  delete_orig: false
+  syncthing: false
+
+readarr:
+  enabled: false
+  url: "http://readarr:8787"
+  paths: ['/downloads']
+  protocols: "torrent"
+  timeout: "10s"
+  delete_delay: "5m"
+  delete_orig: false
+  syncthing: false
+
+sonarr:
+  enabled: false
+  url: "http://sonarr:8989"
+  paths: ['/downloads']
+  protocols: "torrent"
+  timeout: "10s"
+  delete_delay: "5m"
+  delete_orig: false
+  syncthing: false
+
 config:
   debug: false
   quiet: false

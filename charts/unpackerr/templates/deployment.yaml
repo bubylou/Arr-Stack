@@ -55,22 +55,34 @@ spec:
         - name: secrets
           projected:
             sources:
-            # - secret:
-            #     name: lidarr
-            #     path: lidarr/
+            {{- if .Values.lidarr.enabled -}}
+            - secret:
+                name: lidarr
+                items:
+                - key: api-key
+                path: lidarr
+            {{- end }}
+            {{- if .Values.radarr.enabled -}}
             - secret:
                 name: radarr
                 items:
                 - key: api-key
                   path: radarr
-            # - secret:
-            #     name: readarr
-            #     path: readarr.txt
+            {{- end }}
+            {{- if .Values.readarr.enabled -}}
+            - secret:
+                name: readarr
+                items:
+                - key: api-key
+                  path: readarr
+            {{- end }}
+            {{- if .Values.sonarr.enabled -}}
             - secret:
                 name: sonarr
                 items:
                 - key: api-key
                   path: sonarr
+            {{- end }}
       {{- with .Values.volumes }}
         {{- toYaml . | nindent 8 }}
       {{- end }}

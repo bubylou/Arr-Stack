@@ -40,21 +40,53 @@ data:
      interval = {{ .Values.config.folders.interval | quote }}
      buffer = {{ .Values.config.folders.buffer }}
 
+    {{- if .Values.lidarr.enabled -}}
     [[lidarr]]
-    url = "http://lidarr.{{ .Release.Namespace }}.svc:8686"
-    api_key = "filepath:/secrets/radarr/api-key"
+    url = {{ .Values.lidarr.url | quote }}
+    api_key = "filepath:/secrets/lidarr/api-key"
+    paths = {{ .Values.lidarr.paths }}
+    protocols = {{ .Values.lidarr.protocols | quote }}
+    timeout = {{ .Values.lidarr.timeout | quote }}
+    delete_delay = {{ .Values.lidarr.delete_delay | quote }}
+    delete_orig = {{ .Values.lidarr.delete_orig }}
+    syncthing = {{ .Values.lidarr.syncthing }}
+    {{- end }}
 
+    {{- if .Values.radarr.enabled -}}
     [[radarr]]
-    url = "http://radarr.{{ .Release.Namespace }}.svc:7878"
-    api_key = "filepath:/secrets/radarr"
+    url = {{ .Values.radarr.url | quote }}
+    api_key = "filepath:/secrets/radarr/api-key"
+    paths = {{ .Values.radarr.paths }}
+    protocols = {{ .Values.radarr.protocols | quote }}
+    timeout = {{ .Values.radarr.timeout | quote }}
+    delete_delay = {{ .Values.radarr.delete_delay | quote }}
+    delete_orig = {{ .Values.radarr.delete_orig }}
+    syncthing = {{ .Values.radarr.syncthing }}
+    {{- end }}
 
+    {{- if .Values.readarr.enabled -}}
     [[readarr]]
-    url = "http://readarr.{{ .Release.Namespace }}.svc:8787"
-    api_key = "filepath:/secrets/readarr"
+    url = {{ .Values.readarr.url | quote }}
+    api_key = "filepath:/secrets/readarr/api-key"
+    paths = {{ .Values.readarr.paths }}
+    protocols = {{ .Values.readarr.protocols | quote }}
+    timeout = {{ .Values.readarr.timeout | quote }}
+    delete_delay = {{ .Values.readarr.delete_delay | quote }}
+    delete_orig = {{ .Values.readarr.delete_orig }}
+    syncthing = {{ .Values.readarr.syncthing }}
+    {{- end }}
 
+    {{- if .Values.sonarr.enabled -}}
     [[sonarr]]
-    url = "http://sonarr.{{ .Release.Namespace }}.svc:8989"
-    api_key = "filepath:/secrets/sonarr"
+    url = {{ .Values.sonarr.url | quote }}
+    api_key = "filepath:/secrets/sonarr/api-key"
+    paths = {{ .Values.sonarr.paths }}
+    protocols = {{ .Values.sonarr.protocols | quote }}
+    timeout = {{ .Values.sonarr.timeout | quote }}
+    delete_delay = {{ .Values.sonarr.delete_delay | quote }}
+    delete_orig = {{ .Values.sonarr.delete_orig }}
+    syncthing = {{ .Values.sonarr.syncthing }}
+    {{- end }}
 
     [[folder]]
      path = {{ .Values.config.folder.path | quote }}
