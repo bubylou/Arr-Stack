@@ -8,7 +8,7 @@ icon: "https://lidarr.audio/img/logo.png"
 dependencies:
 - name: common
   version: 0.3.2
-  repository: file://../common
+  repository: https://bubylou.github.io/Arr-Stack
 maintainers:
   - name: bubylou
     email: bubylou@pm.me

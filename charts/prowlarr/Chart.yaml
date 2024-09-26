@@ -8,7 +8,7 @@ icon: "https://avatars.githubusercontent.com/u/73049443"
 dependencies:
 - name: common
   version: 0.2.2
-  repository: file://../common
+  repository: https://bubylou.github.io/Arr-Stack
 maintainers:
   - name: bubylou
     email: bubylou@pm.me
