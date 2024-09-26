@@ -137,6 +137,20 @@ entries:
   common:
   - apiVersion: v2
     appVersion: release-4.0.8.1874
+    created: "2024-09-26T00:47:48.192286008Z"
+    description: A common library for arr apps
+    digest: 6cbac491c1e166b5aff871ff3f5e707d1cec63142f1413801836c6c549c217ef
+    icon: https://sonarr.tv/img/logo.png
+    maintainers:
+    - email: bubylou@pm.me
+      name: bubylou
+    name: common
+    type: library
+    urls:
+    - https://github.com/bubylou/Arr-Stack/releases/download/common-0.3.3/common-0.3.3.tgz
+    version: 0.3.3
+  - apiVersion: v2
+    appVersion: release-4.0.8.1874
     created: "2024-09-25T02:48:46.233891283Z"
     description: A common library for arr apps
     digest: a0162dc94b025fc15b61898b116a47377505c068ed2897ce8d559e84d9a52eb8
@@ -1576,4 +1590,4 @@ entries:
     urls:
     - https://github.com/bubylou/helm-charts/releases/download/unpackerr-0.1.0/unpackerr-0.1.0.tgz
     version: 0.1.0
-generated: "2024-09-26T00:33:24.37655462Z"
+generated: "2024-09-26T00:47:48.192446969Z"
