@@ -49,10 +49,14 @@ spec:
             httpGet:
               path: /ping
               port: http
+            initialDelaySeconds: 15
+            periodSeconds: 5
           readinessProbe:
             httpGet:
               path: /ping
               port: http
+            initialDelaySeconds: 15
+            periodSeconds: 5
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           {{- with .Values.volumeMounts }}
