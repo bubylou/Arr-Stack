@@ -1,0 +1,14 @@
+apiVersion: v2
+name: qbittorrent
+description: qBittorrent BitTorrent client
+type: application
+version: 0.1.0
+appVersion: "release-4.6.7"
+icon: "https://avatars.githubusercontent.com/u/2131270"
+dependencies:
+- name: common
+  version: 0.3.3
+  repository: file://../common
+maintainers:
+  - name: bubylou
+    email: bubylou@pm.me
