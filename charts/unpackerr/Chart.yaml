@@ -7,7 +7,7 @@ appVersion: "release-0.14.5"
 icon: "https://unpackerr.zip/img/icon.png"
 dependencies:
 - name: common
-  version: 0.3.2
+  version: 0.3.3
   repository: https://bubylou.github.io/Arr-Stack
 maintainers:
   - name: bubylou

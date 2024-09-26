@@ -7,7 +7,7 @@ appVersion: "release-2.5.3.4341"
 icon: "https://lidarr.audio/img/logo.png"
 dependencies:
 - name: common
-  version: 0.3.2
+  version: 0.3.3
   repository: https://bubylou.github.io/Arr-Stack
 maintainers:
   - name: bubylou

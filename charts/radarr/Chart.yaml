@@ -7,7 +7,7 @@ appVersion: "release-5.9.1.9070"
 icon: "https://radarr.video/img/logo.png"
 dependencies:
 - name: common
-  version: 0.3.2
+  version: 0.3.3
   repository: https://bubylou.github.io/Arr-Stack
 maintainers:
   - name: bubylou

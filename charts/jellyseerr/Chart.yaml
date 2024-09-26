@@ -7,7 +7,7 @@ appVersion: "release-1.9.2"
 icon: "https://docs.jellyseerr.dev/img/logo.svg"
 dependencies:
 - name: common
-  version: 0.3.2
+  version: 0.3.3
   repository: https://bubylou.github.io/Arr-Stack
 maintainers:
   - name: bubylou

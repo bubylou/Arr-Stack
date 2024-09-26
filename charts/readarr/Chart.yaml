@@ -7,7 +7,7 @@ appVersion: "testing-0.3.32.2587"
 icon: "https://readarr.com/img/logo.png"
 dependencies:
 - name: common
-  version: 0.3.2
+  version: 0.3.3
   repository: https://bubylou.github.io/Arr-Stack
 maintainers:
   - name: bubylou

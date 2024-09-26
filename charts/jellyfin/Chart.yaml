@@ -7,7 +7,7 @@ appVersion: "release-10.9.10"
 icon: "https://jellyfin.org/images/logo.svg"
 dependencies:
 - name: common
-  version: 0.3.2
+  version: 0.3.3
   repository: https://bubylou.github.io/Arr-Stack
 maintainers:
   - name: bubylou

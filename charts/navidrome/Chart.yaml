@@ -7,7 +7,7 @@ appVersion: "0.53.2"
 icon: "https://avatars.githubusercontent.com/u/26692192"
 dependencies:
 - name: common
-  version: 0.3.2
+  version: 0.3.3
   repository: https://bubylou.github.io/Arr-Stack
 maintainers:
   - name: bubylou
