@@ -1389,6 +1389,24 @@ entries:
   unpackerr:
   - apiVersion: v2
     appVersion: release-0.14.5
+    created: "2024-09-26T00:33:24.376242296Z"
+    dependencies:
+    - name: common
+      repository: https://bubylou.github.io/Arr-Stack
+      version: 0.3.2
+    description: Extracts downloads for other arr apps
+    digest: 0a72f91df19791bd47f6cb030c4dae002ea507cb6da072a7868277d7564bb308
+    icon: https://unpackerr.zip/img/icon.png
+    maintainers:
+    - email: bubylou@pm.me
+      name: bubylou
+    name: unpackerr
+    type: application
+    urls:
+    - https://github.com/bubylou/Arr-Stack/releases/download/unpackerr-0.3.4/unpackerr-0.3.4.tgz
+    version: 0.3.4
+  - apiVersion: v2
+    appVersion: release-0.14.5
     created: "2024-09-25T15:20:38.765527407Z"
     dependencies:
     - name: common
@@ -1558,4 +1576,4 @@ entries:
     urls:
     - https://github.com/bubylou/helm-charts/releases/download/unpackerr-0.1.0/unpackerr-0.1.0.tgz
     version: 0.1.0
-generated: "2024-09-25T15:20:38.765723798Z"
+generated: "2024-09-26T00:33:24.37655462Z"
