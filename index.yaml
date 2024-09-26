@@ -781,6 +781,24 @@ entries:
   prowlarr:
   - apiVersion: v2
     appVersion: release-1.23.1.4708
+    created: "2024-09-26T00:49:26.728677136Z"
+    dependencies:
+    - name: common
+      repository: https://bubylou.github.io/Arr-Stack
+      version: 0.3.3
+    description: Indexer manager for arr apps
+    digest: 2e3fb1222d7b32107485719b03dd15446fbc4bab8b1d7c27034e2b57d0175990
+    icon: https://avatars.githubusercontent.com/u/73049443
+    maintainers:
+    - email: bubylou@pm.me
+      name: bubylou
+    name: prowlarr
+    type: application
+    urls:
+    - https://github.com/bubylou/Arr-Stack/releases/download/prowlarr-0.3.0/prowlarr-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v2
+    appVersion: release-1.23.1.4708
     created: "2024-09-20T16:40:27.174722549Z"
     dependencies:
     - name: common
@@ -1590,4 +1608,4 @@ entries:
     urls:
     - https://github.com/bubylou/helm-charts/releases/download/unpackerr-0.1.0/unpackerr-0.1.0.tgz
     version: 0.1.0
-generated: "2024-09-26T00:47:48.192446969Z"
+generated: "2024-09-26T00:49:26.728896077Z"
