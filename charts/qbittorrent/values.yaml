@@ -32,6 +32,55 @@ securityContext: {}
   # runAsNonRoot: true
   # runAsUser: 1000
 
+config:
+  Application:
+    FileLogger:
+      Age: 1
+      AgeType: 1
+      Backup: true
+      DeleteOld: true
+      Enabled: true
+      MaxSizeBytes: 66560
+      Path: /app/qBittorrent/data/logs
+
+  BitTorrent:
+    Session:
+      AddTorrentStopped: false
+      DefaultSavePath: /data/downloads/complete
+      DisableAutoTMMByDefault: false
+      ExcludedFileNames: ""
+      Port: 62239
+      QueueingSystemEnabled: false
+      SSLPort: 63588
+      ShareLimitAction: Stop
+      TempPath: /data/downloads/incomplete
+      TempPathEnabled: true
+
+  Core:
+    AutoDeleteAddedTorrentFile: Never
+
+  Meta:
+    MigrationVersion: 8
+
+  Preferences:
+    General:
+      Locale: en
+    MailNotification:
+      req_auth: true
+    WebUI:
+      AlternativeUIEnabled: true
+      AuthSubnetWhitelist: 0.0.0.0/0
+      AuthSubnetWhitelistEnabled: true
+      HostHeaderValidation: false
+      LocalHostAuth: false
+      RootFolder: /app/vuetorrent
+      Username: admin
+
+  RSS:
+    AutoDownloader:
+      DownloadRepacks: true
+      SmartEpisodeFilter: s(\\d+)e(\\d+), (\\d+)x(\\d+), "(\\d{4}[.\\-]\\d{1,2}[.\\-]\\d{1,2})", "(\\d{1,2}[.\\-]\\d{1,2}[.\\-]\\d{4})"
+
 service:
   type: ClusterIP
   port: 8080

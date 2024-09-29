@@ -2,12 +2,13 @@ apiVersion: v2
 name: qbittorrent
 description: qBittorrent BitTorrent client
 type: application
-version: 0.1.0
+version: 0.2.0
 appVersion: "release-4.6.7"
 icon: "https://avatars.githubusercontent.com/u/2131270"
 dependencies:
 - name: common
-  version: 0.3.3
+  version: 0.3.4
+  # repository: https://bubylou.github.io/Arr-Stack
   repository: file://../common
 maintainers:
   - name: bubylou
