@@ -8,7 +8,7 @@ image:
   repository: ghcr.io/hotio/jellyfin
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "release-10.9.10"
+  tag: "release-10.9.11"
 
 imagePullSecrets: []
 nameOverride: ""

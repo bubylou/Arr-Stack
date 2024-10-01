@@ -2,12 +2,12 @@ apiVersion: v2
 name: readarr
 description: Book Manager and Automation (Sonarr for Ebooks)
 type: application
-version: 0.3.0
-appVersion: "testing-0.3.32.2587"
+version: 0.3.1
+appVersion: "testing-0.4.0.2634"
 icon: "https://readarr.com/img/logo.png"
 dependencies:
 - name: common
-  version: 0.3.2
+  version: 0.3.3
   repository: https://bubylou.github.io/Arr-Stack
 maintainers:
   - name: bubylou

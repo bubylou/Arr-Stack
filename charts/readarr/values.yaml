@@ -8,7 +8,7 @@ image:
   repository: ghcr.io/hotio/readarr
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "testing-0.3.32.2587"
+  tag: "testing-0.4.0.2634"
 
 imagePullSecrets: []
 nameOverride: ""
