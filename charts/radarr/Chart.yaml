@@ -2,12 +2,12 @@ apiVersion: v2
 name: radarr
 description: Movie organizer/manager for usenet and torrent users
 type: application
-version: 0.3.0
-appVersion: "release-5.9.1.9070"
+version: 0.3.1
+appVersion: "release-5.11.0.9244"
 icon: "https://radarr.video/img/logo.png"
 dependencies:
 - name: common
-  version: 0.3.2
+  version: 0.3.3
   repository: https://bubylou.github.io/Arr-Stack
 maintainers:
   - name: bubylou
