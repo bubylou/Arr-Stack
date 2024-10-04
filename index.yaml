@@ -991,6 +991,24 @@ entries:
   qbittorrent:
   - apiVersion: v2
     appVersion: release-4.6.7
+    created: "2024-10-04T18:12:39.284648031Z"
+    dependencies:
+    - name: common
+      repository: https://bubylou.github.io/Arr-Stack
+      version: 0.3.4
+    description: qBittorrent BitTorrent client
+    digest: 533d93d04973d28068bc13854d2c7a77a07fe877dbb0d5a2589e829f0ea4f1ad
+    icon: https://avatars.githubusercontent.com/u/2131270
+    maintainers:
+    - email: bubylou@pm.me
+      name: bubylou
+    name: qbittorrent
+    type: application
+    urls:
+    - https://github.com/bubylou/Arr-Stack/releases/download/qbittorrent-0.2.1/qbittorrent-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v2
+    appVersion: release-4.6.7
     created: "2024-09-26T01:53:38.987346316Z"
     dependencies:
     - name: common
@@ -1731,4 +1749,4 @@ entries:
     urls:
     - https://github.com/bubylou/helm-charts/releases/download/unpackerr-0.1.0/unpackerr-0.1.0.tgz
     version: 0.1.0
-generated: "2024-10-04T18:03:26.611349674Z"
+generated: "2024-10-04T18:12:39.284760971Z"
