@@ -1,2 +1,4 @@
 chart-repos:
   - arr-stack=https://bubylou.github.io/Arr-Stack
+excluded-charts:
+  - common
