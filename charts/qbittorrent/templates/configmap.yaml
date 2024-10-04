@@ -1,0 +1,55 @@
+{{- include "common.configmap" . }}
+  config: |-
+    {{- with .Values.config.Application.FileLogger }}
+    [Application]
+    FileLogger\Age={{ .Age }}
+    FileLogger\AgeType={{ .AgeType }}
+    FileLogger\Backup={{ .Backup }}
+    FileLogger\DeleteOld={{ .DeleteOld }}
+    FileLogger\Enabled={{ .Enabled }}
+    FileLogger\MaxSizeBytes={{ .MaxSizeBytes }}
+    FileLogger\Path={{ .Path }}
+    {{ end }}
+
+    {{- with .Values.config.BitTorrent.Session }}
+    [BitTorrent]
+    Session\AddTorrentStopped={{ .AddTorrentStopped }}
+    Session\DefaultSavePath={{ .DefaultSavePath }}
+    Session\DisableAutoTMMByDefault={{ .DisableAutoTMMByDefault }}
+    Session\ExcludedFileNames={{ .ExcludedFileNames }}
+    Session\Port={{ .Port }}
+    Session\QueueingSystemEnabled={{ .QueueingSystemEnabled }}
+    Session\SSL\Port={{ .SSLPort }}
+    Session\ShareLimitAction={{ .ShareLimitAction }}
+    Session\TempPath={{ .TempPath }}
+    Session\TempPathEnabled={{ .TempPathEnabled }}
+    {{ end }}
+
+    {{- with .Values.config.Core }}
+    [Core]
+    AutoDeleteAddedTorrentFile={{ .AutoDeleteAddedTorrentFile }}
+    {{ end }}
+
+    {{- with .Values.config.Meta }}
+    [Meta]
+    MigrationVersion={{ .MigrationVersion }}
+    {{ end }}
+
+    {{- with .Values.config.Preferences }}
+    [Preferences]
+    General\Locale={{ .General.Locale }}
+    MailNotification\req_auth={{ .MailNotification.req_auth }}
+    WebUI\AlternativeUIEnabled={{ .WebUI.AlternativeUIEnabled }}
+    WebUI\AuthSubnetWhitelist={{ .WebUI.AuthSubnetWhitelist }}
+    WebUI\AuthSubnetWhitelistEnabled={{ .WebUI.AuthSubnetWhitelistEnabled }}
+    WebUI\HostHeaderValidation={{ .WebUI.HostHeaderValidation }}
+    WebUI\LocalHostAuth={{ .WebUI.LocalHostAuth }}
+    WebUI\RootFolder={{ .WebUI.RootFolder }}
+    WebUI\Username={{ .WebUI.Username }}
+    {{ end }}
+
+    {{- with .Values.config.RSS }}
+    [RSS]
+    AutoDownloader\DownloadRepacks={{ .AutoDownloader.DownloadRepacks }}
+    AutoDownloader\SmartEpisodeFilter={{ .AutoDownloader.SmartEpisodeFilter }}
+    {{ end }}
