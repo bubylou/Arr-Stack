@@ -32,6 +32,9 @@ securityContext: {}
   # runAsNonRoot: true
   # runAsUser: 1000
 
+bootstrap:
+  enable: false
+
 config:
   Application:
     FileLogger:
