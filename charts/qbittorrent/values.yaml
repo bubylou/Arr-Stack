@@ -136,9 +136,9 @@ volumes: []
 #     path: /srv/share
 
 # Additional volumeMounts on the output Deployment definition.
-volumeMounts: []
-# - name: qbittorrent-config
-#   mountPath: "/config"
+volumeMounts:
+  - name: qbittorrent-data
+    mountPath: "/config"
 # - name: nfs-nas01
 #   mountPath: "/data/downloads"
 #   subPath: Downloads

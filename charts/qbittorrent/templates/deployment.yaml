@@ -1,14 +1,34 @@
 {{- include "common.deployment" . }}
-{{- if .Values.bootstrap.enabled }}
+          lifecycle:
+            postStart:
+              exec:
+                command: ["/bin/sh", "-c", "chown hotio -R /config/config"]
       initContainers:
-        - name: sysctl
+        - name: cp
           image: busybox:1.37
+        {{- if .Values.bootstrap.enabled }}
           securityContext:
             privileged: true
-          command:
-            [
-              "sh",
-              "-c",
-              "sysctl -w net.ipv4.conf.all.src_valid_mark=1 net.ipv6.conf.all.disable_ipv6=1"
-            ]
-{{- end }}
+        {{- end }}
+          command: [ "sh", "-c" ]
+          args:
+            - |
+              mkdir -p /config/config
+              cp /tmp/qBittorrent.conf /config/config/qBittorrent.conf
+        {{- if .Values.bootstrap.enabled }}
+              sysctl -w net.ipv4.conf.all.src_valid_mark=1 net.ipv6.conf.all.disable_ipv6=1
+        {{- end }}
+          volumeMounts:
+            - name: qbittorrent-data
+              mountPath: /config
+            - name: config
+              mountPath: /tmp
+      volumes:
+        - name: qbittorrent-data
+          emptyDir: {}
+        - name: config
+          configMap:
+            name: {{ include "app.fullname" . }}
+            items:
+              - key: config
+                path: qBittorrent.conf
