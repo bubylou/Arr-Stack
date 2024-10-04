@@ -6,3 +6,6 @@ readarr:
   enabled: true
 sonarr:
   enabled: true
+config:
+  webserver:
+    metrics: true

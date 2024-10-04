@@ -34,6 +34,24 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           {{- with $env := .Values.env }}{{ toYaml $env | nindent 12 }}{{- end }}
+        {{ if .Values.config.webserver.metrics }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.service.port }}
+              protocol: TCP
+          livenessProbe:
+             httpGet:
+               path: /
+               port: http
+             initialDelaySeconds: 15
+             periodSeconds: 5
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+            initialDelaySeconds: 15
+            periodSeconds: 5
+        {{ end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
