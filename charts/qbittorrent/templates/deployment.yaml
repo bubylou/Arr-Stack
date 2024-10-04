@@ -2,23 +2,14 @@
           lifecycle:
             postStart:
               exec:
-                command: ["/bin/sh", "-c", "chown hotio -R /config/config"]
-      initContainers:
-        - name: cp
-          image: busybox:1.37
-        {{- if .Values.bootstrap.enabled }}
-          securityContext:
-            privileged: true
-        {{- end }}
-          command: [ "sh", "-c" ]
-          args:
-            - |
-              mkdir -p /config/config
-              cp /tmp/qBittorrent.conf /config/config/qBittorrent.conf
-        {{- if .Values.bootstrap.enabled }}
-              sysctl -w net.ipv4.conf.all.src_valid_mark=1 net.ipv6.conf.all.disable_ipv6=1
-        {{- end }}
-          volumeMounts:
+                command: [ "sh", "-c" ]
+                args:
+                  - |
+                    mkdir -p /config/config
+                    cp /tmp/qBittorrent.conf /config/config/qBittorrent.conf
+                    chown hotio -R /config/config
+
+           volumeMounts:
             - name: qbittorrent-data
               mountPath: /config
             - name: config
