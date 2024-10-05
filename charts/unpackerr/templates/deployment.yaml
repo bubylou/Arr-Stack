@@ -57,9 +57,11 @@ spec:
           volumeMounts:
             - mountPath: /config
               name: config
+          {{- if or .Values.lidarr.enabled .Values.radarr.enabled .Values.readarr.enabled .Values.sonarr.enabled }}
             - mountPath: /secrets
               name: secrets
               readOnly: true
+          {{- end }}
           {{- with .Values.volumeMounts }}
             {{- toYaml . | nindent 12 }}
           {{- end }}
@@ -70,6 +72,7 @@ spec:
             items:
               - key: config
                 path: unpackerr.conf
+      {{- if or .Values.lidarr.enabled .Values.radarr.enabled .Values.readarr.enabled .Values.sonarr.enabled }}
         - name: secrets
           projected:
             sources:
@@ -101,6 +104,7 @@ spec:
                 - key: api-key
                   path: sonarr
             {{- end }}
+      {{- end }}
       {{- with .Values.volumes }}
         {{- toYaml . | nindent 8 }}
       {{- end }}
