@@ -1,1 +1,3 @@
+{{- if .Values.config.webserver.metrics }}
 {{- include "common.service" . }}
+{{- end }}

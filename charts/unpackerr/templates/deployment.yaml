@@ -34,14 +34,34 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           {{- with $env := .Values.env }}{{ toYaml $env | nindent 12 }}{{- end }}
+        {{ if .Values.config.webserver.metrics }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.service.port }}
+              protocol: TCP
+          livenessProbe:
+             httpGet:
+               path: /
+               port: http
+             initialDelaySeconds: 15
+             periodSeconds: 5
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+            initialDelaySeconds: 15
+            periodSeconds: 5
+        {{ end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
             - mountPath: /config
               name: config
+          {{- if or .Values.lidarr.enabled .Values.radarr.enabled .Values.readarr.enabled .Values.sonarr.enabled }}
             - mountPath: /secrets
               name: secrets
               readOnly: true
+          {{- end }}
           {{- with .Values.volumeMounts }}
             {{- toYaml . | nindent 12 }}
           {{- end }}
@@ -52,6 +72,7 @@ spec:
             items:
               - key: config
                 path: unpackerr.conf
+      {{- if or .Values.lidarr.enabled .Values.radarr.enabled .Values.readarr.enabled .Values.sonarr.enabled }}
         - name: secrets
           projected:
             sources:
@@ -60,7 +81,7 @@ spec:
                 name: lidarr
                 items:
                 - key: api-key
-                path: lidarr
+                  path: lidarr
             {{- end }}
             {{- if .Values.radarr.enabled }}
             - secret:
@@ -83,6 +104,7 @@ spec:
                 - key: api-key
                   path: sonarr
             {{- end }}
+      {{- end }}
       {{- with .Values.volumes }}
         {{- toYaml . | nindent 8 }}
       {{- end }}
