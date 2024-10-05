@@ -26,7 +26,7 @@ data:
     file_mode = {{ .file_mode | quote }}
     dir_mode = {{ .dir_mode | quote }}
 
-    [[webserver]]
+    [webserver]
     metrics = {{ .webserver.metrics }}
     listen_addr = {{ .webserver.listen_addr | quote }}
     log_file = {{ .webserver.log_file | quote }}
@@ -35,11 +35,7 @@ data:
     ssl_cert_file = {{ .webserver.ssl_cert_file | quote }}
     ssl_key_file = {{ .webserver.ssl_key_file | quote }}
     urlbase = {{ .webserver.urlbase | quote }}
-    upstreams = [{{ .webserver.upstreams | join "," }}]
-
-    [folders]]
-    interval = {{ .folders.interval | quote }}
-    buffer = {{ .folders.buffer }}
+    upstreams = {{ .webserver.upstreams }}
 
     [[folder]]
     path = {{ .folder.path | quote }}
@@ -51,15 +47,17 @@ data:
     disable_log = {{ .folder.disable_log }}
     move_back = {{ .folder.move_back }}
     extract_isos = {{ .folder.extract_isos }}
+    interval = {{ .folder.interval | quote }}
+    buffer = {{ .folder.buffer }}
 
     [[webhook]]
     url = {{ .webhook.url | quote }}
     name = {{ .webhook.name | quote }}
     silent = {{ .webhook.silent }}
-    events = [{{ .webhook.events | join "," }}]
+    events = {{ .webhook.events }}
     nickname = {{ .webhook.nickname | quote }}
     channel = {{ .webhook.channel | quote }}
-    exclude = [{{ .webhook.exclude | join "," }}]
+    exclude = {{ .webhook.exclude }}
     template_path = {{ .webhook.template_path | quote }}
     template = {{ .webhook.template | quote }}
     ignore_ssl = {{ .webhook.ignore_ssl }}
@@ -71,8 +69,8 @@ data:
     name = {{ .cmdhook.name | quote }}
     shell = {{ .cmdhook.shell }}
     silent = {{ .cmdhook.silent }}
-    events = [{{ .cmdhook.events | join "," }}]
-    exclude = [{{ .cmdhook.exclude | join "," }}]
+    events = {{ .cmdhook.events }}
+    exclude = {{ .cmdhook.exclude }}
     timeout = {{ .cmdhook.timeout | quote }}
     {{- end }}
 
@@ -80,7 +78,7 @@ data:
     [[lidarr]]
     url = {{ .Values.lidarr.url | quote }}
     api_key = "filepath:/secrets/lidarr/api-key"
-    paths = {{ .Values.lidarr.paths | quote | join "," }}
+    paths = {{ .Values.lidarr.paths | quote }}
     protocols = {{ .Values.lidarr.protocols | quote }}
     timeout = {{ .Values.lidarr.timeout | quote }}
     delete_delay = {{ .Values.lidarr.delete_delay | quote }}
@@ -92,7 +90,7 @@ data:
     [[radarr]]
     url = {{ .Values.radarr.url | quote }}
     api_key = "filepath:/secrets/radarr/api-key"
-    paths = {{ .Values.radarr.paths | quote | join "," }}
+    paths = {{ .Values.radarr.paths }}
     protocols = {{ .Values.radarr.protocols | quote }}
     timeout = {{ .Values.radarr.timeout | quote }}
     delete_delay = {{ .Values.radarr.delete_delay | quote }}
@@ -104,7 +102,7 @@ data:
     [[readarr]]
     url = {{ .Values.readarr.url | quote }}
     api_key = "filepath:/secrets/readarr/api-key"
-    paths = {{ .Values.readarr.paths | quote | join "," }}
+    paths = {{ .Values.readarr.paths }}
     protocols = {{ .Values.readarr.protocols | quote }}
     timeout = {{ .Values.readarr.timeout | quote }}
     delete_delay = {{ .Values.readarr.delete_delay | quote }}
@@ -116,10 +114,10 @@ data:
     [[sonarr]]
     url = {{ .Values.sonarr.url | quote }}
     api_key = "filepath:/secrets/sonarr/api-key"
-    paths = {{ .Values.sonarr.paths | quote | join "," }}
+    paths = {{ .Values.sonarr.paths }}
     protocols = {{ .Values.sonarr.protocols | quote }}
     timeout = {{ .Values.sonarr.timeout | quote }}
     delete_delay = {{ .Values.sonarr.delete_delay | quote }}
     delete_orig = {{ .Values.sonarr.delete_orig }}
     syncthing = {{ .Values.sonarr.syncthing }}
-    {{- end }}
+    {{ end }}

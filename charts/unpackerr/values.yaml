@@ -35,7 +35,8 @@ securityContext: {}
 lidarr:
   enabled: false
   url: "http://lidarr:8686"
-  paths: ['/downloads']
+  paths: |-
+    ['/downloads']
   protocols: "torrent"
   timeout: "10s"
   delete_delay: "5m"
@@ -45,7 +46,8 @@ lidarr:
 radarr:
   enabled: false
   url: "http://radarr:7878"
-  paths: ['/downloads']
+  paths: |-
+      ['/downloads']
   protocols: "torrent"
   timeout: "10s"
   delete_delay: "5m"
@@ -55,7 +57,8 @@ radarr:
 readarr:
   enabled: false
   url: "http://readarr:8787"
-  paths: ['/downloads']
+  paths: |-
+      ['/downloads']
   protocols: "torrent"
   timeout: "10s"
   delete_delay: "5m"
@@ -65,7 +68,8 @@ readarr:
 sonarr:
   enabled: false
   url: "http://sonarr:8989"
-  paths: ['/downloads']
+  paths: |-
+    ['/downloads']
   protocols: "torrent"
   timeout: "10s"
   delete_delay: "5m"
@@ -78,7 +82,7 @@ config:
   error_stderr: false
   activity: false
   log_queues: "1m"
-  log_file: '/downloads/unpackerr.log'
+  log_file: '/tmp/unpackerr.log'
   log_files: 10
   log_file_mb: 10
   interval: "2m"
@@ -98,14 +102,11 @@ config:
     ssl_cert_file: ''
     ssl_key_file: ''
     urlbase: "/"
-    upstreams: []
-
-  folders:
-    interval: "0s"
-    buffer: 20000
+    upstreams: |-
+      []
 
   folder:
-    path: '/downloads/auto_extract'
+    path: '/data/downloads/auto_extract'
     extract_path: ''
     delete_after: "10m"
     disable_recursion: false
@@ -114,15 +115,19 @@ config:
     disable_log: false
     move_back: false
     extract_isos: false
+    interval: "0s"
+    buffer: 20000
 
   webhook:
     url: "https://notifiarr.com/api/v1/notification/unpackerr/api_key_from_notifiarr_com"
     name: ""
     silent: false
-    events: [1, 4, 6]
+    events: |-
+        [1, 4, 6]
     nickname: "Unpackerr"
     channel: ""
-    exclude: ["readarr", "lidarr"]
+    exclude: |-
+        ["readarr", "lidarr"]
     template_path: ''
     template: ""
     ignore_ssl: false
@@ -134,8 +139,10 @@ config:
     name: ""
     shell: false
     silent: false
-    events: [1, 4, 7]
-    exclude: ["readarr", "lidarr"]
+    events: |-
+        [1, 4, 7]
+    exclude: |-
+        ["readarr", "lidarr"]
     timeout: "10s"
 
 service:

@@ -78,7 +78,7 @@ spec:
                 name: lidarr
                 items:
                 - key: api-key
-                path: lidarr
+                  path: lidarr
             {{- end }}
             {{- if .Values.radarr.enabled }}
             - secret:
