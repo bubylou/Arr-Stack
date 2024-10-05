@@ -77,7 +77,7 @@ data:
     {{ if .Values.lidarr.enabled }}
     [[lidarr]]
     url = {{ .Values.lidarr.url | quote }}
-    api_key = "filepath:/secrets/lidarr/api-key"
+    api_key = "filepath:/secrets/lidarr"
     paths = {{ .Values.lidarr.paths | quote }}
     protocols = {{ .Values.lidarr.protocols | quote }}
     timeout = {{ .Values.lidarr.timeout | quote }}
@@ -89,7 +89,7 @@ data:
     {{- if .Values.radarr.enabled }}
     [[radarr]]
     url = {{ .Values.radarr.url | quote }}
-    api_key = "filepath:/secrets/radarr/api-key"
+    api_key = "filepath:/secrets/radarr"
     paths = {{ .Values.radarr.paths }}
     protocols = {{ .Values.radarr.protocols | quote }}
     timeout = {{ .Values.radarr.timeout | quote }}
@@ -101,7 +101,7 @@ data:
     {{- if .Values.readarr.enabled }}
     [[readarr]]
     url = {{ .Values.readarr.url | quote }}
-    api_key = "filepath:/secrets/readarr/api-key"
+    api_key = "filepath:/secrets/readarr"
     paths = {{ .Values.readarr.paths }}
     protocols = {{ .Values.readarr.protocols | quote }}
     timeout = {{ .Values.readarr.timeout | quote }}
@@ -113,7 +113,7 @@ data:
     {{- if .Values.sonarr.enabled }}
     [[sonarr]]
     url = {{ .Values.sonarr.url | quote }}
-    api_key = "filepath:/secrets/sonarr/api-key"
+    api_key = "filepath:/secrets/sonarr"
     paths = {{ .Values.sonarr.paths }}
     protocols = {{ .Values.sonarr.protocols | quote }}
     timeout = {{ .Values.sonarr.timeout | quote }}

@@ -36,7 +36,7 @@ lidarr:
   enabled: false
   url: "http://lidarr:8686"
   paths: |-
-    ['/downloads']
+    ['/data/downloads']
   protocols: "torrent"
   timeout: "10s"
   delete_delay: "5m"
@@ -47,7 +47,7 @@ radarr:
   enabled: false
   url: "http://radarr:7878"
   paths: |-
-      ['/downloads']
+      ['/data/downloads']
   protocols: "torrent"
   timeout: "10s"
   delete_delay: "5m"
@@ -58,7 +58,7 @@ readarr:
   enabled: false
   url: "http://readarr:8787"
   paths: |-
-      ['/downloads']
+      ['/data/downloads']
   protocols: "torrent"
   timeout: "10s"
   delete_delay: "5m"
@@ -69,7 +69,7 @@ sonarr:
   enabled: false
   url: "http://sonarr:8989"
   paths: |-
-    ['/downloads']
+    ['/data/downloads']
   protocols: "torrent"
   timeout: "10s"
   delete_delay: "5m"
