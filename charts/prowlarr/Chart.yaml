@@ -2,12 +2,12 @@ apiVersion: v2
 name: prowlarr
 description: Indexer manager for arr apps
 type: application
-version: 0.3.1
+version: 0.3.2
 appVersion: "release-1.24.3.4754"
 icon: "https://avatars.githubusercontent.com/u/73049443"
 dependencies:
 - name: common
-  version: 0.3.3
+  version: 0.3.4
   repository: https://bubylou.github.io/Arr-Stack/
 maintainers:
   - name: bubylou

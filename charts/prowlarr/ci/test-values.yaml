@@ -1,2 +1,4 @@
+bootstrap:
+  enabled: true
 ingress:
   enabled: true
