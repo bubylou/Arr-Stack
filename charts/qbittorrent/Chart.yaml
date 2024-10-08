@@ -12,3 +12,13 @@ dependencies:
 maintainers:
   - name: bubylou
     email: bubylou@pm.me
+annotations:
+  artifacthub.io/changes: |
+    - kind: added
+      description: Added artifacthub.io annotations
+  artifacthub.io/images: |
+    - name: qbittorrent
+      image: hotio/qbittorrent
+  artifacthub.io/links: |
+    - name: Helm Repo
+      url: https://github.com/bubylou/arr-stack

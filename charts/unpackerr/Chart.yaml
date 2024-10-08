@@ -2,7 +2,7 @@ apiVersion: v2
 name: unpackerr
 description: Extracts downloads for other arr apps
 type: application
-version: 0.4.2
+version: 0.4.3
 appVersion: "release-0.14.5"
 icon: "https://unpackerr.zip/img/icon.png"
 dependencies:
@@ -12,3 +12,13 @@ dependencies:
 maintainers:
   - name: bubylou
     email: bubylou@pm.me
+annotations:
+  artifacthub.io/changes: |
+    - kind: added
+      description: Added artifacthub.io annotations
+  artifacthub.io/images: |
+    - name: unpackerr
+      image: hotio/unpackerr
+  artifacthub.io/links: |
+    - name: Helm Repo
+      url: https://github.com/bubylou/arr-stack
