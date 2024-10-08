@@ -12,16 +12,17 @@ helm repo update
 You can then run `helm search repo arr-stack` to see the charts.
 
 ## Charts
-
-[bazarr](https://github.com/bubylou/Arr-Stack/tree/main/charts/bazarr)
-[jellyfin](https://github.com/bubylou/Arr-Stack/tree/main/charts/jellyfin)
-[jellyseerr](https://github.com/bubylou/Arr-Stack/tree/main/charts/jellyseerr)
-[lidarr](https://github.com/bubylou/Arr-Stack/tree/main/charts/lidarr)
-[lldap](https://github.com/bubylou/Arr-Stack/tree/main/charts/lldap)
-[navidrome](https://github.com/bubylou/Arr-Stack/tree/main/charts/navidrome)
-[prowlarr](https://github.com/bubylou/Arr-Stack/tree/main/charts/prowlarr)
-[qbittorrent](https://github.com/bubylou/Arr-Stack/tree/main/charts/qbittorrent)
-[radarr](https://github.com/bubylou/Arr-Stack/tree/main/charts/radarr)
-[readarr](https://github.com/bubylou/Arr-Stack/tree/main/charts/readarr)
-[sonarr](https://github.com/bubylou/Arr-Stack/tree/main/charts/sonarr)
-[unpacker](https://github.com/bubylou/Arr-Stack/tree/main/charts/unpacker)
+| Name                                                                              | Description                |
+| --------------------------------------------------------------------------------- | -------------------------- |
+| [bazarr](https://github.com/bubylou/Arr-Stack/tree/main/charts/bazarr)            | Helm chart for bazarr      |
+| [jellyfin](https://github.com/bubylou/Arr-Stack/tree/main/charts/jellyfin)        | Helm chart for jellyfin    |
+| [jellyseerr](https://github.com/bubylou/Arr-Stack/tree/main/charts/jellyseerr)    | Helm chart for jellyseerr  |
+| [lidarr](https://github.com/bubylou/Arr-Stack/tree/main/charts/lidarr)            | Helm chart for lidarr      |
+| [lldap](https://github.com/bubylou/Arr-Stack/tree/main/charts/lldap)              | Helm chart for lldap       |
+| [navidrome](https://github.com/bubylou/Arr-Stack/tree/main/charts/navidrome)      | Helm chart for navidrome   |
+| [prowlarr](https://github.com/bubylou/Arr-Stack/tree/main/charts/prowlarr)        | Helm chart for prowlarr    |
+| [qbittorrent](https://github.com/bubylou/Arr-Stack/tree/main/charts/qbittorrent)  | Helm chart for qbittorrent |
+| [radarr](https://github.com/bubylou/Arr-Stack/tree/main/charts/radarr)            | Helm chart for radarr      |
+| [readarr](https://github.com/bubylou/Arr-Stack/tree/main/charts/readarr)          | Helm chart for readarr     |
+| [sonarr](https://github.com/bubylou/Arr-Stack/tree/main/charts/sonarr)            | Helm chart for sonarr      |
+| [unpacker](https://github.com/bubylou/Arr-Stack/tree/main/charts/unpacker)        | Helm chart for unpacker    |
