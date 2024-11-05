@@ -689,6 +689,23 @@ entries:
     version: 0.1.0
   lldap:
   - apiVersion: v2
+    appVersion: v0.5.0
+    created: "2024-11-05T18:40:24.236489499Z"
+    dependencies:
+    - name: common
+      repository: https://bubylou.github.io/Arr-Stack
+      version: 0.3.4
+    description: Light LDAP implementation
+    digest: 1b609570745497dedcb08d6cdd4798e3f5e5d1986e6253af5b29dfae80363c3d
+    maintainers:
+    - email: bubylou@pm.me
+      name: bubylou
+    name: lldap
+    type: application
+    urls:
+    - https://github.com/bubylou/Arr-Stack/releases/download/lldap-0.2.3/lldap-0.2.3.tgz
+    version: 0.2.3
+  - apiVersion: v2
     appVersion: release-10.9.10
     created: "2024-09-24T23:13:51.388050637Z"
     dependencies:
@@ -1785,4 +1802,4 @@ entries:
     urls:
     - https://github.com/bubylou/helm-charts/releases/download/unpackerr-0.1.0/unpackerr-0.1.0.tgz
     version: 0.1.0
-generated: "2024-10-05T15:22:33.143001685Z"
+generated: "2024-11-05T18:40:24.236762258Z"
