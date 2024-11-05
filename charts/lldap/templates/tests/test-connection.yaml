@@ -2,4 +2,4 @@
       args:
         - |
           http --ignore-stdin --check-status --timeout 10 GET \
-            {{ include "app.fullname" . }}:{{ .Values.ldap.port }}/health
+            {{ include "app.fullname" . }}:{{ .Values.service.port }}/health
