@@ -1,13 +1,4 @@
----
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: {{ include "app.fullname" . }}
-  labels:
-    {{- include "app.labels" . | nindent 4 }}
-  annotations:
-    "helm.sh/hook": pre-install
-data:
+{{- include "common.configmap" . }}
   config: |-
     verbose = {{ .Values.ldap.verbose }}
     # ldap_host = "0.0.0.0"
