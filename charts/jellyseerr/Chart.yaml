@@ -2,12 +2,12 @@ apiVersion: v2
 name: jellyseerr
 description: Fork of overseerr for jellyfin support
 type: application
-version: 0.2.0
-appVersion: "release-1.9.2"
+version: 0.2.1
+appVersion: "release-2.0.1"
 icon: "https://docs.jellyseerr.dev/img/logo.svg"
 dependencies:
 - name: common
-  version: 0.3.2
+  version: 0.3.4
   repository: https://bubylou.github.io/Arr-Stack
 maintainers:
   - name: bubylou
