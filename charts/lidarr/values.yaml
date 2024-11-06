@@ -7,8 +7,7 @@ replicaCount: 1
 image:
   repository: ghcr.io/hotio/lidarr
   pullPolicy: IfNotPresent
-  # Overrides the image tag whose default is the chart appVersion.
-  tag: "release-2.5.3.4341"
+  tag: "release-2.7.1.4417"
 
 imagePullSecrets: []
 nameOverride: ""

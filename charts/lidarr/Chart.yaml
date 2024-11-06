@@ -2,12 +2,12 @@ apiVersion: v2
 name: lidarr
 description: Looks and smells like Sonarr but made for music
 type: application
-version: 0.3.0
-appVersion: "release-2.5.3.4341"
+version: 0.3.1
+appVersion: "release-2.7.1.4417"
 icon: "https://lidarr.audio/img/logo.png"
 dependencies:
 - name: common
-  version: 0.3.2
+  version: 0.3.4
   repository: https://bubylou.github.io/Arr-Stack
 maintainers:
   - name: bubylou

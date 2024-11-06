@@ -7,8 +7,7 @@ replicaCount: 1
 image:
   repository: ghcr.io/hotio/prowlarr
   pullPolicy: IfNotPresent
-  # Overrides the image tag whose default is the chart appVersion.
-  tag: "release-1.24.3.4754"
+  tag: "release-1.25.4.4818"
 
 imagePullSecrets: []
 nameOverride: ""

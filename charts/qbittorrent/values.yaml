@@ -7,8 +7,7 @@ replicaCount: 1
 image:
   repository: ghcr.io/hotio/qbittorrent
   pullPolicy: IfNotPresent
-  # Overrides the image tag whose default is the chart appVersion.
-  tag: "release-4.6.7"
+  tag: "release-5.0.1"
 
 imagePullSecrets: []
 nameOverride: ""
