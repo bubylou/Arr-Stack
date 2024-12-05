@@ -2,8 +2,8 @@ apiVersion: v2
 name: lldap
 description: Light LDAP implementation
 type: application
-version: 0.2.3
-appVersion: "v0.5.0"
+version: 0.3.0
+appVersion: "v0.6.1"
 dependencies:
 - name: common
   version: 0.3.4

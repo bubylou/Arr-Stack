@@ -2,8 +2,8 @@ apiVersion: v2
 name: sonarr
 description: Smart PVR for newsgroup and bittorrent users
 type: application
-version: 0.3.1
-appVersion: "release-4.0.10.2544"
+version: 0.3.2
+appVersion: "release-4.0.11.2680"
 icon: "https://sonarr.tv/img/logo.png"
 dependencies:
 - name: common
