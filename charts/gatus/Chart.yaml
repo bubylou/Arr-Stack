@@ -1,0 +1,13 @@
+apiVersion: v2
+name: gatus
+description: Automated developer-oriented status page
+type: application
+version: 0.1.0
+appVersion: "v5.13.1"
+dependencies:
+- name: common
+  version: 0.3.4
+  repository: https://bubylou.github.io/Arr-Stack
+maintainers:
+  - name: bubylou
+    email: bubylou@pm.me

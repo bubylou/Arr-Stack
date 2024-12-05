@@ -1,0 +1,3 @@
+{{- include "common.configmap" . }}
+  config: |-
+    {{- .Values.config | toYaml | nindent 4 }}

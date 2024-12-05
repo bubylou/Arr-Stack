@@ -1,0 +1,161 @@
+# Default values for gatus.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: ghcr.io/twin/gatus
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: ""
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+environment: []
+  # - name: TZ
+  #   value: Etc/Utc
+
+podAnnotations: {}
+podLabels: {}
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+config:
+  default-endpoint: &defaults
+    interval: 5m
+    conditions:
+      - "[STATUS] == 200"
+      - "[RESPONSE_TIME] < 300"
+
+  endpoints:
+    # At least one endpoint must be enabled
+    - name: gatus
+      <<: *defaults
+      enabled: true
+      url: "http://127.0.0.1:8080"
+
+    - name: bazarr
+      <<: *defaults
+      enabled: false
+      url: "http://bazarr:6767"
+
+    - name: jellyfin
+      <<: *defaults
+      enabled: false
+      url: "http://jellyfin:8096"
+
+    - name: jellyseerr
+      <<: *defaults
+      enabled: false
+      url: "http://jellyseerr:5055"
+
+    - name: lidarr
+      <<: *defaults
+      enabled: false
+      url: "http://lidarr:8686"
+
+    - name: lldap
+      <<: *defaults
+      enabled: false
+      url: "http://lldap:17170"
+
+    - name: navidrome
+      <<: *defaults
+      enabled: false
+      url: "http://navidrome:4533"
+
+    - name: prowlarr
+      <<: *defaults
+      enabled: false
+      url: "http://prowlarr:9696"
+
+    - name: qbittorrent
+      <<: *defaults
+      enabled: false
+      url: "http://qbittorrent:8080"
+
+    - name: radarr
+      <<: *defaults
+      enabled: false
+      url: "http://radarr:7878"
+
+    - name: readarr
+      <<: *defaults
+      enabled: false
+      url: "http://readarr:8787"
+
+    - name: sonarr
+      <<: *defaults
+      enabled: false
+      url: "http://sonarr:8989"
+
+      # Metrics must be enabled
+    - name: unpackerr
+      <<: *defaults
+      enabled: false
+      url: "http://unpackerr:5656"
+
+service:
+  type: ClusterIP
+  port: 8080
+
+ingress:
+  enabled: false
+  className: ""
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: chart-example.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+livenessProbe:
+  httpGet:
+    path: /health
+    port: http
+readinessProbe:
+  httpGet:
+    path: /health
+    port: http
+
+# Additional volumes on the output Deployment definition.
+volumes: []
+
+# Additional volumeMounts on the output Deployment definition.
+volumeMounts: []
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
