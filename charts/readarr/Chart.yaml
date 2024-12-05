@@ -2,8 +2,8 @@ apiVersion: v2
 name: readarr
 description: Book Manager and Automation (Sonarr for Ebooks)
 type: application
-version: 0.3.2
-appVersion: "testing-0.4.3.2665"
+version: 0.3.3
+appVersion: "testing-0.4.4.2686"
 icon: "https://readarr.com/img/logo.png"
 dependencies:
 - name: common

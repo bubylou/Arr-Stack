@@ -7,7 +7,8 @@ replicaCount: 1
 image:
   repository: ghcr.io/hotio/radarr
   pullPolicy: IfNotPresent
-  tag: "release-5.14.0.9383"
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: ""
 
 imagePullSecrets: []
 nameOverride: ""

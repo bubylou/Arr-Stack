@@ -2,12 +2,12 @@ apiVersion: v2
 name: navidrome
 description: Modern Music Server and Streamer compatible with Subsonic/Airsonic
 type: application
-version: 0.1.1
+version: 0.1.2
 appVersion: "0.53.3"
 icon: "https://avatars.githubusercontent.com/u/26692192"
 dependencies:
 - name: common
-  version: 0.3.3
+  version: 0.3.4
   repository: https://bubylou.github.io/Arr-Stack/
 maintainers:
   - name: bubylou
