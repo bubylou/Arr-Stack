@@ -335,6 +335,24 @@ entries:
     urls:
     - https://github.com/bubylou/helm-charts/releases/download/common-0.1.0/common-0.1.0.tgz
     version: 0.1.0
+  gatus:
+  - apiVersion: v2
+    appVersion: v5.13.1
+    created: "2024-12-05T23:29:46.9435093Z"
+    dependencies:
+    - name: common
+      repository: https://bubylou.github.io/Arr-Stack
+      version: 0.3.4
+    description: Automated developer-oriented status page
+    digest: d16072260dfbb085148882f8b3179403495a776c64ce39ea6f5819ce433f2979
+    maintainers:
+    - email: bubylou@pm.me
+      name: bubylou
+    name: gatus
+    type: application
+    urls:
+    - https://github.com/bubylou/Arr-Stack/releases/download/gatus-0.1.0/gatus-0.1.0.tgz
+    version: 0.1.0
   jellyfin:
   - apiVersion: v2
     appVersion: release-10.10.3
@@ -2181,4 +2199,4 @@ entries:
     urls:
     - https://github.com/bubylou/helm-charts/releases/download/unpackerr-0.1.0/unpackerr-0.1.0.tgz
     version: 0.1.0
-generated: "2024-12-05T17:25:22.852247699Z"
+generated: "2024-12-05T23:29:46.944051396Z"
