@@ -1,0 +1,96 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "app.fullname" . }}
+  labels:
+    {{- include "app.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "app.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "app.labels" . | nindent 8 }}
+        {{- with .Values.podLabels }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+    spec:
+    {{- if .Values.discovery.enabled }}
+      serviceAccountName: homepage
+      automountServiceAccountToken: true
+      enableServiceLinks: true
+    {{- end }}
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: NODE_ENV
+              value: production
+          {{- with $env := .Values.env }}{{ toYaml $env | nindent 12 }}{{- end }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.service.port }}
+              protocol: TCP
+          livenessProbe:
+            {{- toYaml .Values.livenessProbe | nindent 12 }}
+          readinessProbe:
+            {{- toYaml .Values.readinessProbe | nindent 12 }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+            - mountPath: /app/config/custom.js
+              name: {{ include "app.fullname" . }}
+              subPath: custom_js
+            - mountPath: /app/config/custom.css
+              name: {{ include "app.fullname" . }}
+              subPath: custom_css
+            - mountPath: /app/config/bookmarks.yaml
+              name: {{ include "app.fullname" . }}
+              subPath: bookmarks
+            - mountPath: /app/config/kubernetes.yaml
+              name: {{ include "app.fullname" . }}
+              subPath: kubernetes
+            - mountPath: /app/config/services.yaml
+              name: {{ include "app.fullname" . }}
+              subPath: services
+            - mountPath: /app/config/settings.yaml
+              name: {{ include "app.fullname" . }}
+              subPath: settings
+            - mountPath: /app/config/widgets.yaml
+              name: {{ include "app.fullname" . }}
+              subPath: widgets
+            - mountPath: /app/config/logs
+              name: logs
+      volumes:
+        - name: {{ include "app.fullname" . }}
+          configMap:
+            name: {{ include "app.fullname" . }}
+        - name: logs
+          emptyDir: {}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

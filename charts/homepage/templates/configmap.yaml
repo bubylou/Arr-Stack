@@ -1,0 +1,15 @@
+{{- include "common.configmap" . }}
+  bookmarks:
+    {{- .Values.config.bookmarks | toYaml | nindent 4 }}
+  custom_js:
+    {{- .Values.config.custom_js | toYaml | nindent 4 }}
+  custom_css:
+    {{- .Values.config.custom_css | toYaml | nindent 4 }}
+  kubernetes:
+    {{- .Values.config.kubernetes | toYaml | nindent 4 }}
+  services:
+    {{- .Values.config.services | toYaml | nindent 4 }}
+  settings:
+    {{- .Values.config.settings | toYaml | nindent 4 }}
+  widgets:
+    {{- .Values.config.widgets | toYaml | nindent 4 }}
