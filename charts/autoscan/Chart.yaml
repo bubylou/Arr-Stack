@@ -1,0 +1,14 @@
+apiVersion: v2
+name: autoscan
+description: The Free Software Media System
+type: application
+version: 0.1.0
+appVersion: "release-1.4.0"
+icon: "https://autoscan.org/images/logo.svg"
+dependencies:
+- name: common
+  version: 0.3.4
+  repository: https://bubylou.github.io/Arr-Stack/
+maintainers:
+  - name: bubylou
+    email: bubylou@pm.me
