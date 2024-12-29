@@ -1,11 +1,36 @@
-  {{- include "common.configmap" . }}
+{{- include "common.configmap" . }}
   config: |-
+  {{- with .Values.autopulse.triggers }}
     triggers:
+    {{- if .lidarr.enabled }}
       lidarr:
         type: lidarr
+    {{- end }}
+    {{- if .radarr.enabled }}
       radarr:
         type: radarr
+    {{- end }}
+    {{- if .readarr.enabled }}
       readarr:
         type: readarr
+    {{- end }}
+    {{- if .sonrr.enabled }}
       sonarr:
         type: sonarr
+    {{- end }}
+  {{- end }}
+  {{- with .Values.autopulse.targets }}
+    targets:
+    {{- if .jellyfin.enabled }}
+      jellyfin:
+        type: emby
+        url: "http://jellyfin:8096"
+        token: "INSERT_TOKEN_HERE"
+    {{- end }}
+    {{- if .plex.enabled }}
+      plex:
+        type: "plex"
+        url: "http://plex:32400"
+        token: "INSERT_TOKEN_HERE"
+    {{- end }}
+  {{- end }}

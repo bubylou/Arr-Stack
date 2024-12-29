@@ -2,6 +2,27 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
+autopulse:
+  triggers:
+    lidarr:
+      enabled: false
+    radarr:
+      enabled: false
+    readarr:
+      enabled: false
+    sonarr:
+      enabled: false
+
+  targets:
+    jellyfin:
+      enabled: false
+      url: "http://jellyfin:8096"
+      token: "INSERT_TOKEN_HERE"
+    plex:
+      enabled: false
+      url: "http://plex:32400"
+      token: "INSERT_TOKEN_HERE"
+
 replicaCount: 1
 
 image:

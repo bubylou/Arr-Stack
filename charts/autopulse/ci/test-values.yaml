@@ -1,0 +1,15 @@
+autopulse:
+  triggers:
+    lidarr:
+      enabled: true
+    radarr:
+      enabled: true
+    readarr:
+      enabled: true
+    sonarr:
+      enabled: true
+  targets:
+    jellyfin:
+      enabled: true
+    plex:
+      enabled: true
