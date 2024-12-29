@@ -1047,6 +1047,24 @@ entries:
   plex:
   - apiVersion: v2
     appVersion: release-1.41.3.9314-a0bfb8370
+    created: "2024-12-29T06:07:31.074891399Z"
+    dependencies:
+    - name: common
+      repository: https://bubylou.github.io/Arr-Stack/
+      version: 0.3.4
+    description: Media server
+    digest: eb547c62864328bff613830306e8c4de8f4a8b245094c0a4c65fa11310d921e4
+    icon: https://www.plex.tv/wp-content/themes/plex/assets/img/plex-logo.svg
+    maintainers:
+    - email: bubylou@pm.me
+      name: bubylou
+    name: plex
+    type: application
+    urls:
+    - https://github.com/bubylou/Arr-Stack/releases/download/plex-0.1.2/plex-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: release-1.41.3.9314-a0bfb8370
     created: "2024-12-29T05:53:39.509193536Z"
     dependencies:
     - name: common
@@ -2236,4 +2254,4 @@ entries:
     urls:
     - https://github.com/bubylou/helm-charts/releases/download/unpackerr-0.1.0/unpackerr-0.1.0.tgz
     version: 0.1.0
-generated: "2024-12-29T05:53:39.509496241Z"
+generated: "2024-12-29T06:07:31.075136338Z"
