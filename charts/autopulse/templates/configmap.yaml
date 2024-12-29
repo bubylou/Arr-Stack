@@ -1,0 +1,11 @@
+  {{- include "common.configmap" . }}
+  config: |-
+    triggers:
+      lidarr:
+        type: lidarr
+      radarr:
+        type: radarr
+      readarr:
+        type: readarr
+      sonarr:
+        type: sonarr

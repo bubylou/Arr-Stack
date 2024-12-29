@@ -1,0 +1,13 @@
+apiVersion: v2
+name: autopulse
+description: Automated lightweight service that updates media servers.
+type: application
+version: 0.1.0
+appVersion: "v1.2.3"
+dependencies:
+- name: common
+  version: 0.3.4
+  repository: https://bubylou.github.io/Arr-Stack/
+maintainers:
+  - name: bubylou
+    email: bubylou@pm.me
