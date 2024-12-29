@@ -1044,6 +1044,25 @@ entries:
     urls:
     - https://github.com/bubylou/Arr-Stack/releases/download/navidrome-0.1.0/navidrome-0.1.0.tgz
     version: 0.1.0
+  plex:
+  - apiVersion: v2
+    appVersion: release-1.41.3.9314-a0bfb8370
+    created: "2024-12-29T05:46:58.677219448Z"
+    dependencies:
+    - name: common
+      repository: https://bubylou.github.io/Arr-Stack/
+      version: 0.3.4
+    description: Media server
+    digest: 8927e20c3ec7f464480adb1d6c3ab2dae7699b7d3154415131ebfc913a8fbfc3
+    icon: https://www.plex.tv/wp-content/themes/plex/assets/img/plex-logo.svg
+    maintainers:
+    - email: bubylou@pm.me
+      name: bubylou
+    name: plex
+    type: application
+    urls:
+    - https://github.com/bubylou/Arr-Stack/releases/download/plex-0.1.0/plex-0.1.0.tgz
+    version: 0.1.0
   prowlarr:
   - apiVersion: v2
     appVersion: release-1.27.0.4852
@@ -2199,4 +2218,4 @@ entries:
     urls:
     - https://github.com/bubylou/helm-charts/releases/download/unpackerr-0.1.0/unpackerr-0.1.0.tgz
     version: 0.1.0
-generated: "2024-12-05T23:29:46.944051396Z"
+generated: "2024-12-29T05:46:58.677376811Z"
