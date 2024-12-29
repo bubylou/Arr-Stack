@@ -1,0 +1,14 @@
+apiVersion: v2
+name: plex
+description: Media server
+type: application
+version: 0.1.0
+appVersion: "release-1.41.3.9314-a0bfb8370"
+icon: "https://www.plex.tv/wp-content/themes/plex/assets/img/plex-logo.svg"
+dependencies:
+- name: common
+  version: 0.3.4
+  repository: https://bubylou.github.io/Arr-Stack/
+maintainers:
+  - name: bubylou
+    email: bubylou@pm.me
