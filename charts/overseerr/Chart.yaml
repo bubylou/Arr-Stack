@@ -1,0 +1,14 @@
+apiVersion: v2
+name: overseerr
+description: Request management and media discovery tool for the Plex ecosystem
+type: application
+version: 0.1.0
+appVersion: "release-1.33.2"
+icon: "https://github.com/sct/overseerr/raw/develop/public/logo_full.svg"
+dependencies:
+- name: common
+  version: 0.3.4
+  repository: https://bubylou.github.io/Arr-Stack
+maintainers:
+  - name: bubylou
+    email: bubylou@pm.me

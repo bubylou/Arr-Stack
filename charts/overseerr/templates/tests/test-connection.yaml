@@ -1,0 +1,5 @@
+{{- include "common.test.connection" . }}
+      args:
+        - |
+          http --ignore-stdin --check-status --timeout 10 GET \
+            {{ include "app.fullname" . }}:{{ .Values.service.port }}/api/v1/status
