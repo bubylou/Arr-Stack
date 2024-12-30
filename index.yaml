@@ -1047,6 +1047,24 @@ entries:
   overseerr:
   - apiVersion: v2
     appVersion: release-1.33.2
+    created: "2024-12-30T15:54:30.911557625Z"
+    dependencies:
+    - name: common
+      repository: https://bubylou.github.io/Arr-Stack
+      version: 0.3.4
+    description: Request management and media discovery tool for the Plex ecosystem
+    digest: d37c71840b6bf1a97888a7fa995b52c915e4271427805ecb2942d46a069e8f6d
+    icon: https://github.com/sct/overseerr/raw/develop/public/logo_full.svg
+    maintainers:
+    - email: bubylou@pm.me
+      name: bubylou
+    name: overseerr
+    type: application
+    urls:
+    - https://github.com/bubylou/Arr-Stack/releases/download/overseerr-0.1.1/overseerr-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: release-1.33.2
     created: "2024-12-30T00:54:14.839951135Z"
     dependencies:
     - name: common
@@ -2273,4 +2291,4 @@ entries:
     urls:
     - https://github.com/bubylou/helm-charts/releases/download/unpackerr-0.1.0/unpackerr-0.1.0.tgz
     version: 0.1.0
-generated: "2024-12-30T00:54:14.840204857Z"
+generated: "2024-12-30T15:54:30.911832951Z"
