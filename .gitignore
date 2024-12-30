@@ -2,4 +2,3 @@
 charts/*/charts
 charts/*/Chart.lock
 values-dev.yaml
-values.yaml
