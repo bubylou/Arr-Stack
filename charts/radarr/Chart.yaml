@@ -2,8 +2,8 @@ apiVersion: v2
 name: radarr
 description: Movie organizer/manager for usenet and torrent users
 type: application
-version: 0.3.3
-appVersion: "release-5.15.1.9463"
+version: 0.3.4
+appVersion: "release-5.17.2.9580"
 icon: "https://radarr.video/img/logo.png"
 dependencies:
 - name: common

@@ -2,8 +2,8 @@ apiVersion: v2
 name: prowlarr
 description: Indexer manager for arr apps
 type: application
-version: 0.3.3
-appVersion: "release-1.27.0.4852"
+version: 0.3.4
+appVersion: "release-1.30.2.4939"
 icon: "https://avatars.githubusercontent.com/u/73049443"
 dependencies:
 - name: common
