@@ -3,6 +3,19 @@
 	"extends": [
 		"config:recommended"
 	],
+	"customManagers": [
+		{
+			"customType": "regex",
+			"description": "Update appVersion to match latest image references in Chart.yaml",
+			"fileMatch": [
+				"charts/.+/Chart\\.ya?ml$"
+			],
+			"matchStrings": [
+				"#\\s?renovate: image=(?<depName>.*?)\\s?appVersion:\\s?\\\"?(?<currentValue>[\\w+\\.\\-]*)\""
+			],
+			"datasourceTemplate": "docker"
+		}
+	],
 	"helmv3": {
 		"registryAliases": {
 			"stable": "https://charts.helm.sh/stable"
