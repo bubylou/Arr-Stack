@@ -68,10 +68,17 @@ livenessProbe:
   httpGet:
     path: /api/v1/status
     port: http
+  initialDelaySeconds: 30
+  periodSeconds: 30
+  timeoutSeconds: 10
+
 readinessProbe:
   httpGet:
     path: /api/v1/status
     port: http
+  initialDelaySeconds: 30
+  periodSeconds: 30
+  timeoutSeconds: 10
 
 # Additional volumes on the output Deployment definition.
 volumes: []

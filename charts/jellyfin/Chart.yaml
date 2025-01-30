@@ -2,7 +2,7 @@ apiVersion: v2
 name: jellyfin
 description: The Free Software Media System
 type: application
-version: 0.2.5
+version: 0.2.6
 appVersion: "release-10.10.5"
 icon: "https://jellyfin.org/images/logo.svg"
 dependencies:
