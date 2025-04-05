@@ -2,8 +2,8 @@ apiVersion: v2
 name: overseerr
 description: Request management and media discovery tool for the Plex ecosystem
 type: application
-version: 0.1.1
-appVersion: "release-1.33.2"
+version: 0.1.2
+appVersion: "release-1.34.0"
 icon: "https://github.com/sct/overseerr/raw/develop/public/logo_full.svg"
 dependencies:
 - name: common

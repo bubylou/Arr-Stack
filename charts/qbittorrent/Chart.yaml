@@ -2,8 +2,8 @@ apiVersion: v2
 name: qbittorrent
 description: qBittorrent BitTorrent client
 type: application
-version: 0.2.4
-appVersion: "release-5.0.3"
+version: 0.2.5
+appVersion: "release-5.0.4"
 icon: "https://avatars.githubusercontent.com/u/2131270"
 dependencies:
 - name: common
